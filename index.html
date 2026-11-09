@@ -877,7 +877,7 @@
         }
 
         /* ===================================================
-           8. SELECTED WORKS (3 TABS ONLY)
+           8. SELECTED WORKS
         =================================================== */
         .filter-row {
             display: flex;
@@ -1532,8 +1532,7 @@
                 </div>
 
                 <h1 class="hero-title">
-                    
-Satish CineVision <br />
+                    Satish CineVision <br />
                     <span class="gradient-text">VISUAL STORYTELLER &bull; DOP</span>
                 </h1>
 
@@ -1966,22 +1965,15 @@ Satish CineVision <br />
 
             <!-- TIER 1: MAIN CRAFT TABS -->
             <div class="filter-row" style="margin-bottom: 0.85rem;">
-                <button onclick="setMainCraft('all')" class="filter-btn active main-craft-btn" data-craft="all">All
-                    Works (12)</button>
-                <button onclick="setMainCraft('cinematography')" class="filter-btn main-craft-btn"
-                    data-craft="cinematography">🎥 Cinematography (4)</button>
-                <button onclick="setMainCraft('photography')" class="filter-btn main-craft-btn"
-                    data-craft="photography">📷 Photography (4)</button>
-                <button onclick="setMainCraft('editing')" class="filter-btn main-craft-btn" data-craft="editing">✂ Video
-                    Editing &amp; Color (4)</button>
+                <button onclick="setMainCraft('all')" class="filter-btn active main-craft-btn" data-craft="all">All Works (12)</button>
+                <button onclick="setMainCraft('cinematography')" class="filter-btn main-craft-btn" data-craft="cinematography">🎥 Cinematography (4)</button>
+                <button onclick="setMainCraft('photography')" class="filter-btn main-craft-btn" data-craft="photography">📷 Photography (4)</button>
+                <button onclick="setMainCraft('editing')" class="filter-btn main-craft-btn" data-craft="editing">✂ Video Editing &amp; Color (4)</button>
             </div>
 
             <!-- TIER 2: SPECIALTY SUB-CATEGORY CHIPS -->
-            <div id="subCategoryRow"
-                style="display:flex; flex-wrap:wrap; justify-content:center; gap:0.4rem; margin-bottom:2rem;">
-                <!-- Dynamically hydrated via JS or defaults -->
-                <button onclick="filterBySubtype('all')" class="filter-btn active subtype-btn" data-sub="all"
-                    style="font-size:0.68rem; padding:0.3rem 0.7rem; border-color:rgba(245,158,11,0.4);">
+            <div id="subCategoryRow" style="display:flex; flex-wrap:wrap; justify-content:center; gap:0.4rem; margin-bottom:2rem;">
+                <button onclick="filterBySubtype('all')" class="filter-btn active subtype-btn" data-sub="all" style="font-size:0.68rem; padding:0.3rem 0.7rem; border-color:rgba(245,158,11,0.4);">
                     All Specializations
                 </button>
             </div>
@@ -1990,22 +1982,22 @@ Satish CineVision <br />
             <div class="portfolio-grid" id="portfolioGrid">
 
                 <!-- CINEMATOGRAPHY 1: Narrative Short Film -->
-<!-- CINEMATOGRAPHY 1: Narrative Short Film -->
-<div class="project-card" data-craft="cinematography" data-sub="narrative"
-    onclick="openDetail('Chasing Time | A Cinematic Visual Story', 'Cinematography • Narrative', 'Satish Vision', 'https://youtu.be/yL2uEhEPj1A?si=LBBrY6L84OT-9Byq', 'Chasing Time | A Cinematic Visual Story | Short Film')">
-    <div class="project-img-box">
-        <img src="https://img.youtube.com/vi/yL2uEhEPj1A/hqdefault.jpg" alt="Chasing Time Thumbnail">
-        <span class="project-cat-pill">▶ Video • Cine</span>
-    </div>
-    <div class="project-body">
-        <div style="font-family:var(--font-mono); font-size:0.65rem; color:var(--amber-cine); margin-bottom:2px;">
-            CINEMATOGRAPHY • NARRATIVE
-            
-        </div>
-        <h3 class="project-title">Chasing Time | A Cinematic Visual Story</h3>
-        <p class="project-desc">Click to watch Short Film.</p>
-    </div>
-</div>                <!-- CINEMATOGRAPHY 2: Music Video & Creative -->
+                <div class="project-card" data-craft="cinematography" data-sub="narrative"
+                    onclick="openDetail('Chasing Time | A Cinematic Visual Story', 'Cinematography • Narrative', 'Satish Vision', 'https://youtu.be/yL2uEhEPj1A?si=LBBrY6L84OT-9Byq', 'Chasing Time | A Cinematic Visual Story | Short Film')">
+                    <div class="project-img-box">
+                        <img src="https://img.youtube.com/vi/yL2uEhEPj1A/hqdefault.jpg" alt="Chasing Time Thumbnail">
+                        <span class="project-cat-pill">▶ Video • Cine</span>
+                    </div>
+                    <div class="project-body">
+                        <div style="font-family:var(--font-mono); font-size:0.65rem; color:var(--amber-cine); margin-bottom:2px;">
+                            CINEMATOGRAPHY • NARRATIVE
+                        </div>
+                        <h3 class="project-title">Chasing Time | A Cinematic Visual Story</h3>
+                        <p class="project-desc">Click to watch Short Film.</p>
+                    </div>
+                </div>
+
+                <!-- CINEMATOGRAPHY 2: Music Video & Creative -->
                 <div class="project-card" data-craft="cinematography" data-sub="music-video"
                     onclick="openDetail('Cyber Neon Music Video', 'Cinematography &bull; Music Video', 'DoP & Lighting Cameraman', 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80', 'Stylized performance shoot using RGB tube lighting, fast focal tracking, and 2.39:1 anamorphic framing for music artist visualizer.')">
                     <div class="project-img-box">
@@ -2459,17 +2451,18 @@ Satish CineVision &bull; 4K Showreels</p>
     <div id="detailModal" class="modal-overlay">
         <div class="modal-box">
             <a href="#" class="modal-close-btn" onclick="closeDetail()">✕</a>
-            <div style="aspect-ratio:16/9; border-radius:0.5rem; overflow:hidden; margin-bottom:1rem; background:#000;">
-                <img id="detailImg" src="" style="width:100%; height:100%; object-fit:cover;" alt="Detail">
+            
+            <!-- Dynamic Media Container (Loads Photo or YouTube iframe) -->
+            <div id="detailMediaContainer" style="aspect-ratio:16/9; border-radius:0.5rem; overflow:hidden; margin-bottom:1rem; background:#000;">
             </div>
-            <span id="detailCat"
-                style="font-family:var(--font-mono); font-size:0.7rem; color:var(--amber-cine); text-transform:uppercase; font-weight:700;"></span>
+            
+            <span id="detailCat" style="font-family:var(--font-mono); font-size:0.7rem; color:var(--amber-cine); text-transform:uppercase; font-weight:700;"></span>
             <h3 id="detailTitle" style="font-size:1.3rem; color:#fff; font-weight:800; margin:0.3rem 0;"></h3>
             <p id="detailDesc" style="font-size:0.85rem; color:var(--text-muted); line-height:1.6;"></p>
         </div>
     </div>
 
-    <!-- JAVASCRIPT: ENHANCED INTERACTIVITY & TWO-TIER FILTERING -->
+    <!-- JAVASCRIPT: ENHANCED INTERACTIVITY -->
     <script>
         const MY_WHATSAPP = "919876543210";
 
@@ -2650,8 +2643,45 @@ Satish CineVision &bull; 4K Showreels</p>
             }
         }
 
+        // ==========================================
+        // 2. COLOR GRADING SLIDER
+        // ==========================================
+        const splitCanvas = document.getElementById('splitCanvas');
+        const rawClip = document.getElementById('rawClip');
+        const handleLine = document.getElementById('handleLine');
+        const rangeInput = document.getElementById('rangeInput');
+
+        function updateSlider(val) {
+            val = Math.max(0, Math.min(100, val));
+            if (rawClip) rawClip.style.width = val + '%';
+            if (handleLine) handleLine.style.left = val + '%';
+            if (rangeInput) rangeInput.value = val;
+        }
+
+        if (rangeInput) {
+            rangeInput.addEventListener('input', (e) => updateSlider(e.target.value));
+        }
+
+        let dragging = false;
+        if (splitCanvas) {
+            splitCanvas.addEventListener('mousedown', () => dragging = true);
+            window.addEventListener('mouseup', () => dragging = false);
+            window.addEventListener('mousemove', (e) => {
+                if (!dragging) return;
+                const rect = splitCanvas.getBoundingClientRect();
+                const pct = ((e.clientX - rect.left) / rect.width) * 100;
+                updateSlider(pct);
+            });
+
+            splitCanvas.addEventListener('touchmove', (e) => {
+                const rect = splitCanvas.getBoundingClientRect();
+                const pct = ((e.touches[0].clientX - rect.left) / rect.width) * 100;
+                updateSlider(pct);
+            });
+        }
+        
         // ===================================================
-        // 2. TWO-TIER PORTFOLIO FILTER (CRAFT + SUB-TYPES)
+        // 3. TWO-TIER PORTFOLIO FILTER (CRAFT + SUB-TYPES)
         // ===================================================
         const subTypesData = {
             all: [
@@ -2741,54 +2771,38 @@ Satish CineVision &bull; 4K Showreels</p>
         }
 
         // ==========================================
-        // 3. COLOR GRADING SLIDER
+        // 4. PROJECT DETAIL MODAL (SUPPORTS VIDEO & PHOTO)
         // ==========================================
-        const splitCanvas = document.getElementById('splitCanvas');
-        const rawClip = document.getElementById('rawClip');
-        const handleLine = document.getElementById('handleLine');
-        const rangeInput = document.getElementById('rangeInput');
-
-        function updateSlider(val) {
-            val = Math.max(0, Math.min(100, val));
-            if (rawClip) rawClip.style.width = val + '%';
-            if (handleLine) handleLine.style.left = val + '%';
-            if (rangeInput) rangeInput.value = val;
-        }
-
-        if (rangeInput) {
-            rangeInput.addEventListener('input', (e) => updateSlider(e.target.value));
-        }
-
-        let dragging = false;
-        if (splitCanvas) {
-            splitCanvas.addEventListener('mousedown', () => dragging = true);
-            window.addEventListener('mouseup', () => dragging = false);
-            window.addEventListener('mousemove', (e) => {
-                if (!dragging) return;
-                const rect = splitCanvas.getBoundingClientRect();
-                const pct = ((e.clientX - rect.left) / rect.width) * 100;
-                updateSlider(pct);
-            });
-
-            splitCanvas.addEventListener('touchmove', (e) => {
-                const rect = splitCanvas.getBoundingClientRect();
-                const pct = ((e.touches[0].clientX - rect.left) / rect.width) * 100;
-                updateSlider(pct);
-            });
-        }
-
-        // ==========================================
-        // 4. PROJECT DETAIL MODAL
-        // ==========================================
-        function openDetail(title, cat, role, img, desc) {
+        function openDetail(title, cat, role, mediaUrl, desc) {
             document.getElementById('detailTitle').textContent = title;
             document.getElementById('detailCat').textContent = cat + ' • ' + role;
-            document.getElementById('detailImg').src = img;
             document.getElementById('detailDesc').textContent = desc;
+            
+            const mediaContainer = document.getElementById('detailMediaContainer');
+            
+            // Check if the URL is a YouTube link
+            if (mediaUrl.includes('youtube.com') || mediaUrl.includes('youtu.be')) {
+                let videoId = '';
+                if (mediaUrl.includes('youtu.be/')) {
+                    videoId = mediaUrl.split('youtu.be/')[1].split('?')[0];
+                } else if (mediaUrl.includes('youtube.com/watch?v=')) {
+                    videoId = mediaUrl.split('v=')[1].split('&')[0];
+                }
+                
+                // Inject an iframe for playable YouTube video
+                mediaContainer.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${videoId}?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="border:none;"></iframe>`;
+            } else {
+                // Inject an image tag for photos
+                mediaContainer.innerHTML = `<img src="${mediaUrl}" style="width:100%; height:100%; object-fit:cover;" alt="Detail">`;
+            }
+
             document.getElementById('detailModal').classList.add('open');
         }
+
         function closeDetail() {
             document.getElementById('detailModal').classList.remove('open');
+            // Clear the container to instantly stop the video from playing in the background
+            document.getElementById('detailMediaContainer').innerHTML = '';
         }
 
         // ==========================================
