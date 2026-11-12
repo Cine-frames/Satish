@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>SATISH_VISION | Cinematographer, Lighting & Visual Storyteller</title>
+    <title>SATISH_CineVision | Cinematographer, Lighting & Visual Storyteller</title>
 
     <style>
         /* ===================================================
@@ -78,33 +78,10 @@
             pointer-events: none;
         }
 
-        .hud-tl {
-            top: 10px;
-            left: 10px;
-            border-top: 2px solid;
-            border-left: 2px solid;
-        }
-
-        .hud-tr {
-            top: 10px;
-            right: 10px;
-            border-top: 2px solid;
-            border-right: 2px solid;
-        }
-
-        .hud-bl {
-            bottom: 10px;
-            left: 10px;
-            border-bottom: 2px solid;
-            border-left: 2px solid;
-        }
-
-        .hud-br {
-            bottom: 10px;
-            right: 10px;
-            border-bottom: 2px solid;
-            border-right: 2px solid;
-        }
+        .hud-tl { top: 10px; left: 10px; border-top: 2px solid; border-left: 2px solid; }
+        .hud-tr { top: 10px; right: 10px; border-top: 2px solid; border-right: 2px solid; }
+        .hud-bl { bottom: 10px; left: 10px; border-bottom: 2px solid; border-left: 2px solid; }
+        .hud-br { bottom: 10px; right: 10px; border-bottom: 2px solid; border-right: 2px solid; }
 
         .cine-card {
             background: var(--bg-card);
@@ -238,17 +215,8 @@
         }
 
         @keyframes pulse {
-
-            0%,
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            50% {
-                opacity: 0.4;
-                transform: scale(0.85);
-            }
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.85); }
         }
 
         nav.site-navbar {
@@ -326,7 +294,6 @@
             gap: 0.5rem;
         }
 
-        /* NATIVE MENU BUTTON (WORKS WITH & WITHOUT JAVASCRIPT) */
         .menu-trigger-btn {
             display: inline-flex;
             align-items: center;
@@ -353,15 +320,11 @@
         }
 
         /* ===================================================
-           3. ZERO-FAIL NATIVE CSS MODAL SYSTEM (:target BASED)
-           Works in Chrome, Safari, AND inside Android HTML Previewers!
+           3. FULL FEATURE MENU MODAL (JS-CONTROLLED, NO HASH JUMP)
         =================================================== */
         #featureMenuModal {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            inset: 0;
             width: 100vw;
             height: 100vh;
             background: rgba(4, 5, 8, 0.98);
@@ -369,14 +332,11 @@
             -webkit-backdrop-filter: blur(14px);
             z-index: 99999;
             display: none;
-            /* Hidden by default */
             flex-direction: column;
             overflow-y: auto;
             padding: 1.25rem 1rem 3.5rem;
         }
 
-        /* NATIVE CSS TRIGGER: When URL has #featureMenuModal */
-        #featureMenuModal:target,
         #featureMenuModal.active {
             display: flex !important;
         }
@@ -409,7 +369,6 @@
             display: flex;
             align-items: center;
             gap: 0.4rem;
-            text-decoration: none;
         }
 
         .menu-close-btn:hover {
@@ -435,6 +394,7 @@
             transition: all 0.2s ease;
             text-decoration: none;
             color: #fff;
+            cursor: pointer;
         }
 
         .feature-item-card:hover {
@@ -669,25 +629,11 @@
             pointer-events: none;
         }
 
-        #sim-ambient {
-            background: linear-gradient(to top, rgba(80, 40, 20, 0.35), transparent 70%);
-        }
-
-        #sim-haze {
-            background: radial-gradient(ellipse at center, rgba(245, 158, 11, 0.12) 0%, rgba(6, 182, 212, 0.08) 50%, transparent 80%);
-        }
-
-        #sim-key {
-            background: linear-gradient(135deg, rgba(251, 191, 36, 0.45) 0%, rgba(245, 158, 11, 0.1) 50%, transparent 80%);
-        }
-
-        #sim-fill {
-            background: linear-gradient(225deg, rgba(255, 255, 255, 0.22) 0%, transparent 60%);
-        }
-
-        #sim-rim {
-            background: linear-gradient(45deg, transparent 40%, rgba(6, 182, 212, 0.45) 100%);
-        }
+        #sim-ambient { background: linear-gradient(to top, rgba(80, 40, 20, 0.35), transparent 70%); }
+        #sim-haze { background: radial-gradient(ellipse at center, rgba(245, 158, 11, 0.12) 0%, rgba(6, 182, 212, 0.08) 50%, transparent 80%); }
+        #sim-key { background: linear-gradient(135deg, rgba(251, 191, 36, 0.45) 0%, rgba(245, 158, 11, 0.1) 50%, transparent 80%); }
+        #sim-fill { background: linear-gradient(225deg, rgba(255, 255, 255, 0.22) 0%, transparent 60%); }
+        #sim-rim { background: linear-gradient(45deg, transparent 40%, rgba(6, 182, 212, 0.45) 100%); }
 
         .subject-avatar {
             position: relative;
@@ -767,15 +713,8 @@
             cursor: pointer;
         }
 
-        .btn-toggle.on {
-            background: var(--amber-cine);
-            color: #000;
-        }
-
-        .btn-toggle.off {
-            background: rgba(255, 255, 255, 0.08);
-            color: var(--text-dim);
-        }
+        .btn-toggle.on { background: var(--amber-cine); color: #000; }
+        .btn-toggle.off { background: rgba(255, 255, 255, 0.08); color: var(--text-dim); }
 
         /* ===================================================
            7. COLOR GRADING SLIDER
@@ -832,15 +771,8 @@
             border: 1px solid var(--border-subtle);
         }
 
-        .tag-badge.raw {
-            left: 10px;
-            color: var(--amber-cine);
-        }
-
-        .tag-badge.graded {
-            right: 10px;
-            color: var(--cyan-cine);
-        }
+        .tag-badge.raw { left: 10px; color: var(--amber-cine); }
+        .tag-badge.graded { right: 10px; color: var(--cyan-cine); }
 
         .handle-line {
             position: absolute;
@@ -877,7 +809,7 @@
         }
 
         /* ===================================================
-           8. SELECTED WORKS
+           8. SELECTED WORKS & PERSON SERIES POSTS
         =================================================== */
         .filter-row {
             display: flex;
@@ -974,6 +906,279 @@
             font-size: 0.8rem;
             color: var(--text-muted);
             line-height: 1.4;
+        }
+
+        /* ===================================================
+           8B. EDITORIAL / INSTAGRAM POST-STYLE PHOTO CARDS
+        =================================================== */
+        .photo-post-card {
+            border-radius: 1rem;
+            overflow: hidden;
+            background: linear-gradient(180deg, #111520 0%, #0b0e16 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .photo-post-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(6, 182, 212, 0.65);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 0.95rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(6, 7, 10, 0.65);
+        }
+
+        .post-author {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .post-avatar {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--amber-cine), var(--amber-warm));
+            color: #000;
+            font-weight: 900;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border: 2px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .post-author-info {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.25;
+        }
+
+        .post-handle {
+            font-size: 0.82rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .post-location {
+            font-family: var(--font-mono);
+            font-size: 0.63rem;
+            color: var(--text-muted);
+        }
+
+        .post-badge-pill {
+            font-family: var(--font-mono);
+            font-size: 0.62rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0.22rem 0.55rem;
+            border-radius: 999px;
+            background: rgba(6, 182, 212, 0.14);
+            border: 1px solid rgba(6, 182, 212, 0.45);
+            color: var(--cyan-cine);
+            white-space: nowrap;
+        }
+
+        .post-media-box {
+            position: relative;
+            aspect-ratio: 4 / 5;
+            width: 100%;
+            background: #050609;
+            overflow: hidden;
+            touch-action: pan-y;
+        }
+
+        .post-body {
+            padding: 0.95rem 1rem 1.05rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            flex: 1;
+        }
+
+        .post-exif-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 0.15rem;
+        }
+
+        .exif-tag {
+            font-family: var(--font-mono);
+            font-size: 0.62rem;
+            color: var(--amber-cine);
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.28);
+            padding: 0.12rem 0.45rem;
+            border-radius: 0.3rem;
+        }
+
+        .post-caption-title {
+            font-size: 0.98rem;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .post-caption-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.45;
+        }
+
+        .post-footer-bar {
+            margin-top: auto;
+            padding-top: 0.6rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: var(--font-mono);
+            font-size: 0.64rem;
+            color: var(--text-dim);
+        }
+
+        /* ===================================================
+           8C. INSTAGRAM-STYLE MULTI-PHOTO CAROUSEL CONTROLS
+        =================================================== */
+        .carousel-slide {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.28s ease, transform 0.45s ease;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .photo-post-card:hover .carousel-slide.active {
+            transform: scale(1.03);
+        }
+
+        .carousel-counter-pill {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(6, 7, 10, 0.85);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 0.22rem 0.55rem;
+            border-radius: 999px;
+            z-index: 6;
+            pointer-events: none;
+        }
+
+        .carousel-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(6, 7, 10, 0.8);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 7;
+            transition: all 0.2s ease;
+        }
+
+        .carousel-nav-btn:hover {
+            background: var(--amber-cine);
+            color: #000000;
+            border-color: var(--amber-cine);
+        }
+
+        .carousel-prev { left: 10px; }
+        .carousel-next { right: 10px; }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(6, 7, 10, 0.72);
+            backdrop-filter: blur(4px);
+            padding: 4px 8px;
+            border-radius: 999px;
+            z-index: 6;
+        }
+
+        .carousel-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.35);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .carousel-dot.active {
+            width: 14px;
+            border-radius: 4px;
+            background: var(--amber-cine);
+        }
+
+        /* Modal Gallery Strip for Multi-Photo Posts */
+        .modal-thumb-strip {
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            padding: 0.6rem 0 0.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .modal-thumb-item {
+            width: 60px;
+            height: 74px;
+            border-radius: 0.45rem;
+            overflow: hidden;
+            border: 2px solid transparent;
+            cursor: pointer;
+            flex-shrink: 0;
+            opacity: 0.55;
+            transition: all 0.2s ease;
+        }
+
+        .modal-thumb-item.active,
+        .modal-thumb-item:hover {
+            border-color: var(--amber-cine);
+            opacity: 1;
+        }
+
+        .modal-thumb-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* ===================================================
@@ -1080,37 +1285,14 @@
             flex-shrink: 0;
         }
 
-        .icon-wa {
-            background: #25d366;
-        }
+        .icon-wa { background: #25d366; }
+        .icon-insta { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .icon-yt { background: #ff0000; }
+        .icon-li { background: #0a66c2; }
+        .icon-mail { background: var(--amber-cine); color: #000; }
 
-        .icon-insta {
-            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-        }
-
-        .icon-yt {
-            background: #ff0000;
-        }
-
-        .icon-li {
-            background: #0a66c2;
-        }
-
-        .icon-mail {
-            background: var(--amber-cine);
-            color: #000;
-        }
-
-        .social-info h4 {
-            font-size: 0.95rem;
-            font-weight: 700;
-        }
-
-        .social-info p {
-            font-family: var(--font-mono);
-            font-size: 0.72rem;
-            color: var(--text-muted);
-        }
+        .social-info h4 { font-size: 0.95rem; font-weight: 700; }
+        .social-info p { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); }
 
         /* ===================================================
            11. CONTACT & WHATSAPP SHOOT BUILDER
@@ -1121,9 +1303,7 @@
             padding: 2rem 1.25rem;
         }
 
-        .form-group {
-            margin-bottom: 1rem;
-        }
+        .form-group { margin-bottom: 1rem; }
 
         .form-label {
             display: block;
@@ -1198,12 +1378,10 @@
             transition: all 0.25s ease;
         }
 
-        .floating-whatsapp-btn:hover {
-            transform: scale(1.1);
-        }
+        .floating-whatsapp-btn:hover { transform: scale(1.1); }
 
         /* ===================================================
-           12. FOOTER & MODALS (:target NATIVE TRIGGER)
+           12. FOOTER & MODALS (PURE JS-CONTROLLED, NO HASH JUMP)
         =================================================== */
         footer.site-footer {
             border-top: 1px solid var(--border-subtle);
@@ -1216,10 +1394,7 @@
 
         .modal-overlay {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            inset: 0;
             width: 100vw;
             height: 100vh;
             background: rgba(0, 0, 0, 0.94);
@@ -1231,8 +1406,6 @@
             padding: 1rem;
         }
 
-        /* Opens natively when URL hash matches */
-        .modal-overlay:target,
         .modal-overlay.open {
             display: flex !important;
         }
@@ -1242,10 +1415,10 @@
             border: 1px solid var(--border-subtle);
             border-radius: 1rem;
             width: 100%;
-            max-width: 750px;
+            max-width: 780px;
             padding: 1.25rem;
             position: relative;
-            max-height: 90vh;
+            max-height: 92vh;
             overflow-y: auto;
         }
 
@@ -1257,15 +1430,14 @@
             color: #fff;
             border: none;
             border-radius: 50%;
-            width: 32px;
-            height: 32px;
+            width: 34px;
+            height: 34px;
             cursor: pointer;
             font-size: 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 10;
-            text-decoration: none;
+            z-index: 20;
         }
 
         .modal-close-btn:hover {
@@ -1274,73 +1446,25 @@
 
         /* Responsive Breakpoints */
         @media (min-width: 640px) {
-            .hero-title {
-                font-size: 3.25rem;
-            }
-
-            .pillars-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .bts-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .gear-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .hero-highlights {
-                grid-template-columns: repeat(4, 1fr);
-            }
-
-            .social-channels-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .menu-grid-features {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .form-grid {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 1rem;
-            }
+            .hero-title { font-size: 3.25rem; }
+            .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+            .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+            .bts-grid { grid-template-columns: repeat(2, 1fr); }
+            .gear-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero-highlights { grid-template-columns: repeat(4, 1fr); }
+            .social-channels-grid { grid-template-columns: repeat(2, 1fr); }
+            .menu-grid-features { grid-template-columns: repeat(2, 1fr); }
+            .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
         }
 
         @media (min-width: 992px) {
-            .desktop-nav-links {
-                display: flex;
-            }
-
-            .pillars-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-
-            .lighting-stage-grid {
-                grid-template-columns: 8fr 4fr;
-            }
-
-            .portfolio-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .bts-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-
-            .gear-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-
-            .social-channels-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
+            .desktop-nav-links { display: flex; }
+            .pillars-grid { grid-template-columns: repeat(4, 1fr); }
+            .lighting-stage-grid { grid-template-columns: 8fr 4fr; }
+            .portfolio-grid { grid-template-columns: repeat(3, 1fr); }
+            .bts-grid { grid-template-columns: repeat(4, 1fr); }
+            .gear-grid { grid-template-columns: repeat(4, 1fr); }
+            .social-channels-grid { grid-template-columns: repeat(3, 1fr); }
         }
     </style>
 </head>
@@ -1367,148 +1491,142 @@
     <!-- MAIN NAVBAR -->
     <nav class="site-navbar">
         <div class="nav-inner">
-            <a href="#hero" class="brand-logo">
+            <a href="#hero" onclick="smoothJumpTo(event, 'hero')" class="brand-logo">
                 <div class="brand-badge">SV</div>
                 <div class="brand-name">SATISH<span>_CineVision</span></div>
             </a>
 
             <!-- Desktop Links -->
             <div class="desktop-nav-links">
-                <a href="#skills">Pillars</a>
-                <a href="#lighting-lab" style="color: var(--amber-cine);">Lighting Lab</a>
-                <a href="#grading-slider">Color Grade</a>
-                <a href="#portfolio">Works</a>
-                <a href="#bts">BTS</a>
-                <a href="#gear">Kit</a>
-                <a href="#social-channels">Socials</a>
-                <a href="#contact" style="color: var(--cyan-cine);">Book Shoot</a>
+                <a href="#skills" onclick="smoothJumpTo(event, 'skills')">Pillars</a>
+                <a href="#lighting-lab" onclick="smoothJumpTo(event, 'lighting-lab')" style="color: var(--amber-cine);">Lighting Lab</a>
+                <a href="#grading-slider" onclick="smoothJumpTo(event, 'grading-slider')">Color Grade</a>
+                <a href="#portfolio" onclick="smoothJumpTo(event, 'portfolio')">Works</a>
+                <a href="#bts" onclick="smoothJumpTo(event, 'bts')">BTS</a>
+                <a href="#gear" onclick="smoothJumpTo(event, 'gear')">Kit</a>
+                <a href="#social-channels" onclick="smoothJumpTo(event, 'social-channels')">Socials</a>
+                <a href="#contact" onclick="smoothJumpTo(event, 'contact')" style="color: var(--cyan-cine);">Book Shoot</a>
             </div>
 
-            <!-- Actions (Uses Native Anchors: 100% Clickable on every mobile phone!) -->
+            <!-- Actions (Zero-Jump Modal Triggers) -->
             <div class="nav-actions">
-                <a href="#showreelModal" class="btn btn-amber" style="padding: 0.45rem 0.85rem; font-size: 0.72rem;">
+                <button type="button" onclick="openShowreelModal()" class="btn btn-amber" style="padding: 0.45rem 0.85rem; font-size: 0.72rem;">
                     ▶ Reel
-                </a>
+                </button>
 
-                <!-- NATIVE MENU BUTTON (NEVER FAILS TO OPEN) -->
-                <a href="#featureMenuModal" class="menu-trigger-btn" aria-label="Open Features Menu">
+                <button type="button" onclick="openFeatureMenu()" class="menu-trigger-btn" aria-label="Open Features Menu">
                     <span style="font-size:1.1rem; line-height:1;">☰</span>
                     <span>Menu</span>
-                </a>
+                </button>
             </div>
         </div>
     </nav>
 
     <!-- ===================================================
          CINEMATIC FULL FEATURE MENU MODAL
-         (Natively opens when you click Menu!)
     =================================================== -->
     <div id="featureMenuModal">
         <div class="menu-modal-container">
             <div class="menu-modal-header">
                 <div>
-                    <div
-                        style="font-size:0.75rem; font-family:var(--font-mono); color:var(--amber-cine); text-transform:uppercase; font-weight:700;">
+                    <div style="font-size:0.75rem; font-family:var(--font-mono); color:var(--amber-cine); text-transform:uppercase; font-weight:700;">
                         Navigation Index
                     </div>
                     <div style="font-size:1.25rem; font-weight:800; color:#fff;">
                         SATISH_VISION Core Features
                     </div>
                 </div>
-                <!-- Native Close Button -->
-                <a href="#" class="menu-close-btn">
-                    ✕ Close Menu
-                </a>
+                <button type="button" onclick="closeFeatureMenu()" class="menu-close-btn">✕ Close Menu</button>
             </div>
 
             <div class="menu-grid-features">
-                <a href="#hero" class="feature-item-card">
+                <div onclick="navigateFromMenu('hero')" class="feature-item-card">
                     <div class="feature-icon-box">🏠</div>
                     <div class="feature-info">
                         <h4>01. Home &amp; Hero Viewfinder</h4>
                         <p>Director hook, live availability, and cinematography overview.</p>
                     </div>
                     <div class="feature-arrow">&rarr;</div>
-                </a>
+                </div>
 
-                <a href="#skills" class="feature-item-card">
+                <div onclick="navigateFromMenu('skills')" class="feature-item-card">
                     <div class="feature-icon-box">🛡️</div>
                     <div class="feature-info">
                         <h4>02. The 4 Craft Pillars</h4>
                         <p>Cinematography, 3-point lighting setups, photography &amp; editing.</p>
                     </div>
                     <div class="feature-arrow">&rarr;</div>
-                </a>
+                </div>
 
-                <a href="#lighting-lab" class="feature-item-card" style="border-color: rgba(245,158,11,0.5);">
+                <div onclick="navigateFromMenu('lighting-lab')" class="feature-item-card" style="border-color: rgba(245,158,11,0.5);">
                     <div class="feature-icon-box" style="background:var(--amber-cine); color:#000;">💡</div>
                     <div class="feature-info">
                         <h4 style="color:var(--amber-cine);">03. 3-Point Lighting Lab (Interactive)</h4>
-                        <p>Live toggle for Key, Fill, Rim &amp; Haze with contrast ratio ratios.</p>
+                        <p>Live toggle for Key, Fill, Rim &amp; Haze with contrast ratios.</p>
                     </div>
                     <div class="feature-arrow" style="color:var(--amber-cine);">&rarr;</div>
-                </a>
+                </div>
 
-                <a href="#grading-slider" class="feature-item-card">
+                <div onclick="navigateFromMenu('grading-slider')" class="feature-item-card">
                     <div class="feature-icon-box">🎨</div>
                     <div class="feature-info">
                         <h4>04. Raw vs Rec.709 Color Grade</h4>
                         <p>Interactive draggable slider comparing flat Log with final grade.</p>
                     </div>
                     <div class="feature-arrow">&rarr;</div>
-                </a>
+                </div>
 
-                <a href="#portfolio" class="feature-item-card">
+                <div onclick="navigateFromMenu('portfolio')" class="feature-item-card">
                     <div class="feature-icon-box">🎬</div>
                     <div class="feature-info">
-                        <h4>05. Selected Works &amp; Tests</h4>
-                        <p>Filtered by Cinematography, Photography &amp; Video Editing.</p>
+                        <h4>05. Selected Works &amp; Person Posts</h4>
+                        <p>Grouped person photo carousels, cinematography &amp; editing.</p>
                     </div>
                     <div class="feature-arrow">&rarr;</div>
-                </a>
+                </div>
 
-                <a href="#bts" class="feature-item-card">
+                <div onclick="navigateFromMenu('bts')" class="feature-item-card">
                     <div class="feature-icon-box">📹</div>
                     <div class="feature-info">
                         <h4>06. Behind The Scenes (BTS)</h4>
                         <p>On-set camera rigging, light modifiers, and field discipline.</p>
                     </div>
                     <div class="feature-arrow">&rarr;</div>
-                </a>
+                </div>
 
-                <a href="#gear" class="feature-item-card">
+                <div onclick="navigateFromMenu('gear')" class="feature-item-card">
                     <div class="feature-icon-box">🎒</div>
                     <div class="feature-info">
                         <h4>07. Gear Locker &amp; Tech Kit</h4>
                         <p>Cine rigs, prime lenses, COB studio lights, and editing software.</p>
                     </div>
                     <div class="feature-arrow">&rarr;</div>
-                </a>
+                </div>
 
-                <a href="#social-channels" class="feature-item-card" style="border-color: rgba(6,182,212,0.5);">
+                <div onclick="navigateFromMenu('social-channels')" class="feature-item-card" style="border-color: rgba(6,182,212,0.5);">
                     <div class="feature-icon-box" style="background:var(--cyan-cine); color:#000;">🌐</div>
                     <div class="feature-info">
                         <h4 style="color:var(--cyan-cine);">08. Social Media &amp; Handles</h4>
                         <p>Connect on WhatsApp, Instagram, YouTube, and LinkedIn.</p>
                     </div>
                     <div class="feature-arrow" style="color:var(--cyan-cine);">&rarr;</div>
-                </a>
+                </div>
 
-                <a href="#contact" class="feature-item-card" style="border-color: rgba(37,211,102,0.5);">
+                <div onclick="navigateFromMenu('contact')" class="feature-item-card" style="border-color: rgba(37,211,102,0.5);">
                     <div class="feature-icon-box" style="background:#25d366; color:#000;">💬</div>
                     <div class="feature-info">
                         <h4 style="color:#25d366;">09. Book A Shoot Direct</h4>
                         <p>Configure shoot details and transmit instant brief on WhatsApp.</p>
                     </div>
                     <div class="feature-arrow" style="color:#25d366;">&rarr;</div>
-                </a>
+                </div>
             </div>
 
             <!-- Direct Fast Action Buttons -->
             <div style="display:flex; flex-wrap:wrap; gap:0.75rem;">
-                <a href="#showreelModal" class="btn btn-amber" style="flex:1;">
+                <button type="button" onclick="closeFeatureMenu(true); openShowreelModal();" class="btn btn-amber" style="flex:1;">
                     ▶ Watch 2.39:1 Showreel
-                </a>
+                </button>
                 <a href="https://wa.me/919354650624?text=Hi%20Satish,%20I%20saw%20your%20portfolio%20and%20want%20to%20discuss%20a%20shoot."
                     target="_blank" class="btn" style="background:#25d366; color:#000; flex:1;">
                     💬 Open WhatsApp Chat
@@ -1527,8 +1645,7 @@
                 <div class="hud-bracket hud-br"></div>
 
                 <div class="status-pill">
-                    <span style="color:#10b981;">●</span> Available For Shoots: <strong>Delhi NCR &amp;
-                        Pan-India</strong>
+                    <span style="color:#10b981;">●</span> Available For Shoots: <strong>Delhi NCR &amp; Pan-India</strong>
                 </div>
 
                 <h1 class="hero-title">
@@ -1537,13 +1654,13 @@
                 </h1>
 
                 <p class="hero-bio">
-                    Cinematographer & visual storyteller crafting motivated camera movement, precise 3-point lighting ratios, and narrative film color palettes. Shoot-ready for Indie Films, Music Videos, and Commercials
+ I craft stories by using lighting, dynamic framing and purposeful camera movement. I blend visuals so that raw moments become memorable frames from the lens to the final cut.
                 </p>
 
                 <div class="hero-cta">
-                    <a href="#showreelModal" class="btn btn-amber">▶ Watch Showreel</a>
-                    <a href="#lighting-lab" class="btn btn-glass">💡 Lighting Lab</a>
-                    <a href="#contact" class="btn btn-cyan">✉ Book Direct Shoot</a>
+                    <button type="button" onclick="openShowreelModal()" class="btn btn-amber">▶ Watch Showreel</button>
+                    <a href="#lighting-lab" onclick="smoothJumpTo(event, 'lighting-lab')" class="btn btn-glass">💡 Lighting Lab</a>
+                    <a href="#contact" onclick="smoothJumpTo(event, 'contact')" class="btn btn-cyan">✉ Book Direct Shoot</a>
                 </div>
 
                 <div class="hero-highlights">
@@ -1574,8 +1691,7 @@
             <div class="section-header">
                 <span class="section-tag">Capabilities</span>
                 <h2 class="section-title">The 4 Core Craft Pillars</h2>
-                <p class="section-desc">Synergy between camera movement, lighting physics, photography aesthetics, and
-                    editing rhythm.</p>
+                <p class="section-desc">Synergy between camera movement, lighting physics, photography aesthetics, and editing rhythm.</p>
             </div>
 
             <div class="pillars-grid">
@@ -1587,8 +1703,7 @@
                         </div>
                         <span class="pillar-tag">Camera &amp; Framing</span>
                         <h3 class="pillar-title">Cinematography</h3>
-                        <p class="pillar-desc">24 FPS pacing, 180° shutter rule, fluid gimbal &amp; handheld rigs, and
-                            cinematic 2.39:1 scope composition.</p>
+                        <p class="pillar-desc">24 FPS pacing, 180° shutter rule, fluid gimbal &amp; handheld rigs, and cinematic 2.39:1 scope composition.</p>
                     </div>
                 </div>
 
@@ -1600,8 +1715,7 @@
                         </div>
                         <span class="pillar-tag">Lighting Setups</span>
                         <h3 class="pillar-title">3-Point Lighting</h3>
-                        <p class="pillar-desc">Practical setups: Key (3200K/5600K), fill ratio balance, hair kicker rim
-                            separation, and volumetric haze atmosphere.</p>
+                        <p class="pillar-desc">Practical setups: Key (3200K/5600K), fill ratio balance, hair kicker rim separation, and volumetric haze atmosphere.</p>
                     </div>
                 </div>
 
@@ -1613,8 +1727,7 @@
                         </div>
                         <span class="pillar-tag">Still Photography</span>
                         <h3 class="pillar-title">Exposure &amp; Bokeh</h3>
-                        <p class="pillar-desc">Prime optics, shallow depth of field (f/1.4 - f/2.8), street documentary
-                            portraits, and manual RAW color development.</p>
+                        <p class="pillar-desc">Prime optics, shallow depth of field (f/1.4 - f/2.8), street documentary portraits, and manual RAW color development.</p>
                     </div>
                 </div>
 
@@ -1626,8 +1739,7 @@
                         </div>
                         <span class="pillar-tag">Post-Production</span>
                         <h3 class="pillar-title">Editing &amp; Color</h3>
-                        <p class="pillar-desc">Timeline rhythm, cutting on action in Premiere Pro, S-Log3 flat raw
-                            correction, and custom Rec.709 film grading.</p>
+                        <p class="pillar-desc">Timeline rhythm, cutting on action in Premiere Pro, S-Log3 flat raw correction, and custom Rec.709 film grading.</p>
                     </div>
                 </div>
             </div>
@@ -1641,17 +1753,12 @@
                 <span class="section-tag">DOP Masterclass &bull; Virtual Studio</span>
                 <h2 class="section-title">Interactive Lighting Lab &amp; Floor Setup</h2>
                 <p class="section-desc">
-                    Cinematography is painting with light and shadow. Test real <strong>lighting patterns (Rembrandt,
-                        Split, Butterfly)</strong>, switch between the <strong>Camera Viewfinder</strong> and the
-                    <strong>Overhead Floor Diagram</strong>, and see why lighting sets the emotional tone of every
-                    scene.
+                    Cinematography is painting with light and shadow. Test real <strong>lighting patterns (Rembrandt, Split, Butterfly)</strong>, switch between the <strong>Camera Viewfinder</strong> and the <strong>Overhead Floor Diagram</strong>, and see why lighting sets the emotional tone of every scene.
                 </p>
             </div>
 
-            <!-- View Switcher: Camera POV vs Overhead Set Floor Plan -->
             <div style="display:flex; justify-content:center; gap:0.5rem; margin-bottom:1.5rem;">
-                <button id="viewBtnCamera" onclick="switchLabView('camera')" class="filter-btn active"
-                    style="font-weight:700;">
+                <button id="viewBtnCamera" onclick="switchLabView('camera')" class="filter-btn active" style="font-weight:700;">
                     🎥 Camera Viewfinder (Front POV)
                 </button>
                 <button id="viewBtnFloor" onclick="switchLabView('floor')" class="filter-btn">
@@ -1660,7 +1767,6 @@
             </div>
 
             <div class="lighting-stage-grid">
-
                 <!-- VIEW 1: CAMERA VIEWPORT STAGE -->
                 <div class="cine-card viewport-container" id="stageContainerCamera">
                     <div class="hud-bracket hud-tl"></div>
@@ -1669,118 +1775,83 @@
                     <div class="hud-bracket hud-br"></div>
 
                     <div class="lighting-viewport" id="cineViewport">
-                        <!-- Ambient Darkness & Room Glow -->
                         <div class="light-layer" id="sim-ambient" style="opacity:1;"></div>
-
-                        <!-- Atmospheric Volumetric Haze -->
                         <div class="light-layer" id="sim-haze" style="opacity:0.8;"></div>
 
-                        <!-- 3D Subject Silhouette & Shading Face -->
-                        <div class="subject-wrapper"
-                            style="position:relative; z-index:10; display:flex; flex-direction:column; align-items:center;">
+                        <div class="subject-wrapper" style="position:relative; z-index:10; display:flex; flex-direction:column; align-items:center;">
                             <div id="subjectSilhouette" class="subject-avatar"
                                 style="transition: all 0.3s ease; box-shadow: 0 0 25px rgba(0,0,0,0.9); font-size:2.2rem; width:84px; height:84px; position:relative;">
                                 👤
-                                <!-- Live Shadow Overlay Badge -->
                                 <div id="patternNameBadge"
                                     style="position:absolute; bottom:-12px; font-family:var(--font-mono); font-size:0.58rem; background:rgba(0,0,0,0.85); color:var(--amber-cine); padding:1px 6px; border-radius:3px; border:1px solid rgba(245,158,11,0.4); white-space:nowrap;">
                                     REMBRANDT
                                 </div>
                             </div>
-                            <span
-                                style="font-family:var(--font-mono); font-size:0.65rem; color:var(--text-muted); margin-top:16px; background:rgba(0,0,0,0.6); padding:2px 8px; border-radius:4px; border:1px solid rgba(255,255,255,0.08);">
+                            <span style="font-family:var(--font-mono); font-size:0.65rem; color:var(--text-muted); margin-top:16px; background:rgba(0,0,0,0.6); padding:2px 8px; border-radius:4px; border:1px solid rgba(255,255,255,0.08);">
                                 Talent (Motivated Light Falloff)
                             </span>
                         </div>
 
-                        <!-- Key Light Beam (Angle 45 deg) -->
                         <div class="light-layer" id="sim-key" style="opacity:1;"></div>
-
-                        <!-- Fill Light Soft Wash -->
                         <div class="light-layer" id="sim-fill" style="opacity:0.7;"></div>
-
-                        <!-- Rim / Hair Edge Kicker Light -->
                         <div class="light-layer" id="sim-rim" style="opacity:0.9;"></div>
 
-                        <!-- Live HUD Telemetry Strip -->
                         <div class="viewport-hud">
-                            <div>RATIO: <strong id="hudRatio" style="color:var(--amber-cine)">4:1 Dramatic
-                                    Narrative</strong></div>
+                            <div>RATIO: <strong id="hudRatio" style="color:var(--amber-cine)">4:1 Dramatic Narrative</strong></div>
                             <div>CCT: <strong id="hudCCT" style="color:var(--amber-warm)">3200K Tungsten</strong></div>
                             <div>KEY: <strong id="hudKeyPower" style="color:#fff">85%</strong></div>
                         </div>
                     </div>
 
-                    <!-- Directorial Explainer Card (Under Viewport for Easy Understanding) -->
-                    <div
-                        style="margin-top:0.85rem; padding:0.85rem; background:rgba(0,0,0,0.4); border-radius:0.65rem; border:1px solid rgba(255,255,255,0.06); font-family:var(--font-mono); font-size:0.72rem; line-height:1.5;">
+                    <div style="margin-top:0.85rem; padding:0.85rem; background:rgba(0,0,0,0.4); border-radius:0.65rem; border:1px solid rgba(255,255,255,0.06); font-family:var(--font-mono); font-size:0.72rem; line-height:1.5;">
                         <span style="color:var(--amber-cine); font-weight:700;">💡 Directorial Insight: </span>
                         <span id="lightingInsightText" style="color:var(--text-muted);">
-                            Key light creates the primary character shape. Fill controls how deep the shadow side is,
-                            while the Rim light carves the actor's silhouette off dark backgrounds.
+                            Key light creates the primary character shape. Fill controls how deep the shadow side is, while the Rim light carves the actor's silhouette off dark backgrounds.
                         </span>
                     </div>
                 </div>
 
-                <!-- VIEW 2: OVERHEAD 2D FLOOR PLAN (Top-Down Diagram) -->
+                <!-- VIEW 2: OVERHEAD 2D FLOOR PLAN -->
                 <div class="cine-card viewport-container" id="stageContainerFloor" style="display:none;">
                     <div class="hud-bracket hud-tl"></div>
                     <div class="hud-bracket hud-tr"></div>
                     <div class="hud-bracket hud-bl"></div>
                     <div class="hud-bracket hud-br"></div>
 
-                    <div class="lighting-viewport"
-                        style="background:#07090e; flex-direction:column; justify-content:space-between; padding:1.25rem;">
-                        <div
-                            style="width:100%; display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:0.65rem; color:var(--text-dim); border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:4px;">
+                    <div class="lighting-viewport" style="background:#07090e; flex-direction:column; justify-content:space-between; padding:1.25rem;">
+                        <div style="width:100%; display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:0.65rem; color:var(--text-dim); border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:4px;">
                             <span>TOP-DOWN GAFFER FLOOR MAP</span>
                             <span style="color:var(--amber-cine);">GRID: 1M SCALE</span>
                         </div>
 
-                        <!-- Floor Layout Schematic -->
-                        <div
-                            style="position:relative; width:100%; height:190px; display:flex; align-items:center; justify-content:center;">
-                            <!-- Top Wall / Background -->
-                            <div
-                                style="position:absolute; top:5px; left:10%; right:10%; height:2px; background:rgba(255,255,255,0.15); border-style:dashed;">
-                            </div>
+                        <div style="position:relative; width:100%; height:190px; display:flex; align-items:center; justify-content:center;">
+                            <div style="position:absolute; top:5px; left:10%; right:10%; height:2px; background:rgba(255,255,255,0.15); border-style:dashed;"></div>
 
-                            <!-- Rim Light Fixture (Back right behind subject) -->
-                            <div id="floorRimLight"
-                                style="position:absolute; top:18px; right:20%; font-family:var(--font-mono); font-size:0.62rem; color:var(--cyan-cine); display:flex; align-items:center; gap:4px; transition:opacity 0.2s;">
+                            <div id="floorRimLight" style="position:absolute; top:18px; right:20%; font-family:var(--font-mono); font-size:0.62rem; color:var(--cyan-cine); display:flex; align-items:center; gap:4px; transition:opacity 0.2s;">
                                 <span>💡 Rim Kicker (6500K)</span>
                                 <span style="font-size:0.9rem;">↘</span>
                             </div>
 
-                            <!-- Subject Center Circle -->
-                            <div
-                                style="width:50px; height:50px; border-radius:50%; background:#1b212f; border:2px solid var(--amber-cine); display:flex; align-items:center; justify-content:center; color:#fff; font-size:0.75rem; font-weight:700; z-index:5; box-shadow:0 0 15px rgba(245,158,11,0.25);">
+                            <div style="width:50px; height:50px; border-radius:50%; background:#1b212f; border:2px solid var(--amber-cine); display:flex; align-items:center; justify-content:center; color:#fff; font-size:0.75rem; font-weight:700; z-index:5; box-shadow:0 0 15px rgba(245,158,11,0.25);">
                                 TALENT
                             </div>
 
-                            <!-- Key Light Fixture (Front Left at 45°) -->
-                            <div id="floorKeyLight"
-                                style="position:absolute; bottom:30px; left:12%; font-family:var(--font-mono); font-size:0.62rem; color:var(--amber-warm); display:flex; align-items:center; gap:4px; transition:opacity 0.2s;">
+                            <div id="floorKeyLight" style="position:absolute; bottom:30px; left:12%; font-family:var(--font-mono); font-size:0.62rem; color:var(--amber-warm); display:flex; align-items:center; gap:4px; transition:opacity 0.2s;">
                                 <span style="font-size:0.9rem;">↗</span>
                                 <span>💡 300W Key (45° Octa)</span>
                             </div>
 
-                            <!-- Fill Board (Front Right) -->
-                            <div id="floorFillLight"
-                                style="position:absolute; bottom:30px; right:12%; font-family:var(--font-mono); font-size:0.62rem; color:#93c5fd; display:flex; align-items:center; gap:4px; transition:opacity 0.2s;">
+                            <div id="floorFillLight" style="position:absolute; bottom:30px; right:12%; font-family:var(--font-mono); font-size:0.62rem; color:#93c5fd; display:flex; align-items:center; gap:4px; transition:opacity 0.2s;">
                                 <span>◻ 5-in-1 Fill Bounce</span>
                                 <span style="font-size:0.9rem;">↖</span>
                             </div>
 
-                            <!-- Camera Center Front -->
-                            <div
-                                style="position:absolute; bottom:5px; font-family:var(--font-mono); font-size:0.65rem; color:#fff; background:#111522; padding:3px 10px; border-radius:4px; border:1px solid rgba(255,255,255,0.2);">
+                            <div style="position:absolute; bottom:5px; font-family:var(--font-mono); font-size:0.65rem; color:#fff; background:#111522; padding:3px 10px; border-radius:4px; border:1px solid rgba(255,255,255,0.2);">
                                 🎥 A-CAM (50mm Prime &bull; 24 FPS)
                             </div>
                         </div>
 
-                        <div
-                            style="width:100%; font-family:var(--font-mono); font-size:0.65rem; color:var(--text-muted); text-align:center;">
+                        <div style="width:100%; font-family:var(--font-mono); font-size:0.65rem; color:var(--text-muted); text-align:center;">
                             Key 45° off-axis | Fill on shadow side | Rim 135° backlight kicker
                         </div>
                     </div>
@@ -1788,10 +1859,8 @@
 
                 <!-- CONTROLS & PHYSICAL GAFFER CONSOLE -->
                 <div class="cine-card controls-card">
-                    <div
-                        style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:0.5rem;">
-                        <span
-                            style="font-family:var(--font-mono); font-size:0.75rem; color:#fff; font-weight:700; text-transform:uppercase;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:0.5rem;">
+                        <span style="font-family:var(--font-mono); font-size:0.75rem; color:#fff; font-weight:700; text-transform:uppercase;">
                             Gaffer Controls &amp; Patterns
                         </span>
                         <span style="font-family:var(--font-mono); font-size:0.65rem; color:#10b981; font-weight:700;">
@@ -1799,91 +1868,69 @@
                         </span>
                     </div>
 
-                    <!-- 1. Famous Lighting Patterns (Easy for anyone to learn & understand!) -->
                     <div style="margin-bottom:0.85rem;">
-                        <div
-                            style="font-family:var(--font-mono); font-size:0.68rem; color:var(--amber-cine); text-transform:uppercase; margin-bottom:0.4rem; font-weight:700;">
+                        <div style="font-family:var(--font-mono); font-size:0.68rem; color:var(--amber-cine); text-transform:uppercase; margin-bottom:0.4rem; font-weight:700;">
                             1. Facial Shadow Pattern:
                         </div>
-                        <div
-                            style="display:grid; grid-template-columns:repeat(2, 1fr); gap:0.4rem; font-family:var(--font-mono); font-size:0.65rem;">
-                            <button onclick="setFacePattern('rembrandt')" id="btnPatRembrandt" class="filter-btn active"
-                                style="padding:0.35rem;">Rembrandt (45° Triangle)</button>
-                            <button onclick="setFacePattern('split')" id="btnPatSplit" class="filter-btn"
-                                style="padding:0.35rem;">Split (90° Noir Half)</button>
-                            <button onclick="setFacePattern('butterfly')" id="btnPatButterfly" class="filter-btn"
-                                style="padding:0.35rem;">Butterfly (Beauty Top)</button>
-                            <button onclick="setFacePattern('rim')" id="btnPatRim" class="filter-btn"
-                                style="padding:0.35rem;">Backlit Silhouette</button>
+                        <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:0.4rem; font-family:var(--font-mono); font-size:0.65rem;">
+                            <button onclick="setFacePattern('rembrandt')" id="btnPatRembrandt" class="filter-btn active" style="padding:0.35rem;">Rembrandt (45° Triangle)</button>
+                            <button onclick="setFacePattern('split')" id="btnPatSplit" class="filter-btn" style="padding:0.35rem;">Split (90° Noir Half)</button>
+                            <button onclick="setFacePattern('butterfly')" id="btnPatButterfly" class="filter-btn" style="padding:0.35rem;">Butterfly (Beauty Top)</button>
+                            <button onclick="setFacePattern('rim')" id="btnPatRim" class="filter-btn" style="padding:0.35rem;">Backlit Silhouette</button>
                         </div>
                     </div>
 
-                    <!-- 2. Individual Fixture Switches -->
-                    <div
-                        style="font-family:var(--font-mono); font-size:0.68rem; color:var(--text-dim); text-transform:uppercase; margin-bottom:0.35rem; font-weight:700;">
+                    <div style="font-family:var(--font-mono); font-size:0.68rem; color:var(--text-dim); text-transform:uppercase; margin-bottom:0.35rem; font-weight:700;">
                         2. Fixture Toggles &amp; Dimmer:
                     </div>
 
-                    <!-- Key Light -->
                     <div class="control-row">
                         <div class="control-info" style="width:100%; margin-right:8px;">
                             <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span class="control-name"><span style="color:var(--amber-cine);">●</span> Key Light
-                                    (Main Shape)</span>
+                                <span class="control-name"><span style="color:var(--amber-cine);">●</span> Key Light (Main Shape)</span>
                                 <button id="btn-key" onclick="toggleLight('key')" class="btn-toggle on">ON</button>
                             </div>
                             <div style="margin-top:6px; display:flex; align-items:center; gap:6px;">
-                                <span
-                                    style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-dim);">DIM</span>
+                                <span style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-dim);">DIM</span>
                                 <input type="range" id="sliderKeyPower" min="10" max="100" value="85"
                                     style="width:100%; accent-color:var(--amber-cine); height:3px;"
                                     oninput="updateGafferConsole()" aria-label="Key Light Dimmer">
-                                <span id="labelKeyPower"
-                                    style="font-family:var(--font-mono); font-size:0.6rem; color:#fff;">85%</span>
+                                <span id="labelKeyPower" style="font-family:var(--font-mono); font-size:0.6rem; color:#fff;">85%</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Color Temperature CCT -->
                     <div class="control-row" style="flex-direction:column; align-items:stretch; gap:6px;">
                         <div style="display:flex; justify-content:space-between; align-items:center;">
                             <span class="control-name" style="font-size:0.75rem;">🌡️ Color Temperature (CCT)</span>
-                            <span id="labelCCT"
-                                style="font-family:var(--font-mono); font-size:0.7rem; color:var(--amber-warm); font-weight:700;">3200K
-                                Tungsten Warm</span>
+                            <span id="labelCCT" style="font-family:var(--font-mono); font-size:0.7rem; color:var(--amber-warm); font-weight:700;">3200K Tungsten Warm</span>
                         </div>
                         <input type="range" id="sliderCCT" min="3200" max="5600" step="100" value="3200"
                             style="width:100%; accent-color:var(--amber-warm); height:4px;"
                             oninput="updateGafferConsole()" aria-label="Color Temperature">
-                        <div
-                            style="display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:0.58rem; color:var(--text-dim);">
+                        <div style="display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:0.58rem; color:var(--text-dim);">
                             <span>3200K Warm Tungsten</span>
                             <span>4300K Neutral</span>
                             <span>5600K Cool Daylight</span>
                         </div>
                     </div>
 
-                    <!-- Fill Light -->
                     <div class="control-row">
                         <div class="control-info">
-                            <span class="control-name"><span style="color:#93c5fd;">●</span> Fill Reflector /
-                                Bounce</span>
+                            <span class="control-name"><span style="color:#93c5fd;">●</span> Fill Reflector / Bounce</span>
                             <span class="control-desc">Lifts shadow side of character face</span>
                         </div>
                         <button id="btn-fill" onclick="toggleLight('fill')" class="btn-toggle on">ON</button>
                     </div>
 
-                    <!-- Rim Light -->
                     <div class="control-row">
                         <div class="control-info">
-                            <span class="control-name"><span style="color:var(--cyan-cine);">●</span> Rim / Hair
-                                Kicker</span>
+                            <span class="control-name"><span style="color:var(--cyan-cine);">●</span> Rim / Hair Kicker</span>
                             <span class="control-desc">Silhouettes hair &amp; shoulders from backdrop</span>
                         </div>
                         <button id="btn-rim" onclick="toggleLight('rim')" class="btn-toggle on">ON</button>
                     </div>
 
-                    <!-- Haze -->
                     <div class="control-row">
                         <div class="control-info">
                             <span class="control-name"><span style="color:#c084fc;">●</span> Atmospheric Haze</span>
@@ -1892,21 +1939,14 @@
                         <button id="btn-haze" onclick="toggleLight('haze')" class="btn-toggle on">ON</button>
                     </div>
 
-                    <!-- Directorial Presets -->
-                    <div
-                        style="margin-top:0.85rem; padding-top:0.65rem; border-top:1px solid var(--border-subtle); display:flex; justify-content:space-between; align-items:center; font-family:var(--font-mono); font-size:0.65rem;">
+                    <div style="margin-top:0.85rem; padding-top:0.65rem; border-top:1px solid var(--border-subtle); display:flex; justify-content:space-between; align-items:center; font-family:var(--font-mono); font-size:0.65rem;">
                         <span style="color:var(--text-dim);">DIRECTOR PRESETS:</span>
-                        <span onclick="setLightingPreset('noir')" style="color:var(--amber-cine); cursor:pointer;">Noir
-                            8:1</span>
-                        <span onclick="setLightingPreset('golden')"
-                            style="color:var(--amber-warm); cursor:pointer;">Golden 3:1</span>
-                        <span onclick="setLightingPreset('commercial')" style="color:#10b981; cursor:pointer;">High-Key
-                            2:1</span>
-                        <span onclick="setLightingPreset('all')"
-                            style="color:#fff; cursor:pointer; text-decoration:underline;">Reset</span>
+                        <span onclick="setLightingPreset('noir')" style="color:var(--amber-cine); cursor:pointer;">Noir 8:1</span>
+                        <span onclick="setLightingPreset('golden')" style="color:var(--amber-warm); cursor:pointer;">Golden 3:1</span>
+                        <span onclick="setLightingPreset('commercial')" style="color:#10b981; cursor:pointer;">High-Key 2:1</span>
+                        <span onclick="setLightingPreset('all')" style="color:#fff; cursor:pointer; text-decoration:underline;">Reset</span>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -1917,8 +1957,7 @@
             <div class="section-header">
                 <span class="section-tag">Color Finishing</span>
                 <h2 class="section-title">Raw Log vs Final Rec.709</h2>
-                <p class="section-desc">Drag the interactive slider to compare flat S-Log3 raw footage with the color
-                    graded master look.</p>
+                <p class="section-desc">Drag the interactive slider to compare flat S-Log3 raw footage with the color graded master look.</p>
             </div>
 
             <div class="cine-card slider-wrapper">
@@ -1928,12 +1967,10 @@
                 <div class="hud-bracket hud-br"></div>
 
                 <div class="split-view" id="splitCanvas">
-                    <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1200&q=80"
-                        alt="Final Color Graded">
+                    <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1200&q=80" alt="Final Color Graded">
 
                     <div class="raw-clip" id="rawClip">
-                        <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1200&q=80"
-                            alt="Raw Log">
+                        <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1200&q=80" alt="Raw Log">
                     </div>
 
                     <span class="tag-badge raw">S-LOG3 FLAT RAW</span>
@@ -1944,30 +1981,25 @@
                     </div>
                 </div>
 
-                <input type="range" min="0" max="100" value="50" class="range-slider-bar" id="rangeInput"
-                    aria-label="Comparison slider">
+                <input type="range" min="0" max="100" value="50" class="range-slider-bar" id="rangeInput" aria-label="Comparison slider">
             </div>
         </div>
     </section>
 
-    <!-- 5. SELECTED PROJECTS & CATEGORY BREAKDOWN -->
+    <!-- 5. SELECTED PROJECTS & GROUPED PERSON POSTS -->
     <section id="portfolio" class="section-block" style="background:#080a0f;">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Portfolio Showcase</span>
-                <h2 class="section-title">Selected Projects &amp; Work Types</h2>
+                <h2 class="section-title">Selected Projects &amp; Person Series</h2>
                 <p class="section-desc">
-                    Browse my body of work organized by specialized craft and formats—from <strong>Narrative
-                        Films</strong> and <strong>Music Videos</strong> to <strong>Street Portraits</strong> and
-                    <strong>Color Grading</strong>.
-                </p>
-            </div>
+Explore a curated showcase spanning Photography, Cinematography, and Video Editing crafted to tell compelling Cinematic visual stories from lens to final cut            </div>
 
             <!-- TIER 1: MAIN CRAFT TABS -->
             <div class="filter-row" style="margin-bottom: 0.85rem;">
-                <button onclick="setMainCraft('all')" class="filter-btn active main-craft-btn" data-craft="all">All Works (12)</button>
+                <button onclick="setMainCraft('all')" class="filter-btn active main-craft-btn" data-craft="all">All Works</button>
                 <button onclick="setMainCraft('cinematography')" class="filter-btn main-craft-btn" data-craft="cinematography">🎥 Cinematography (4)</button>
-                <button onclick="setMainCraft('photography')" class="filter-btn main-craft-btn" data-craft="photography">📷 Photography (4)</button>
+                <button onclick="setMainCraft('photography')" class="filter-btn main-craft-btn" data-craft="photography">📷 Photography Posts</button>
                 <button onclick="setMainCraft('editing')" class="filter-btn main-craft-btn" data-craft="editing">✂ Video Editing &amp; Color (4)</button>
             </div>
 
@@ -1978,14 +2010,14 @@
                 </button>
             </div>
 
-            <!-- PORTFOLIO GRID (12 Specialized Projects across all types) -->
+            <!-- PORTFOLIO GRID -->
             <div class="portfolio-grid" id="portfolioGrid">
 
                 <!-- CINEMATOGRAPHY 1: Narrative Short Film -->
                 <div class="project-card" data-craft="cinematography" data-sub="narrative"
-                    onclick="openDetail('Chasing Time | A Cinematic Visual Story', 'Cinematography • Narrative', 'Satish Vision', 'https://youtu.be/yL2uEhEPj1A?si=LBBrY6L84OT-9Byq', 'Chasing Time | A Cinematic Visual Story | Short Film')">
+                    onclick="openDetail('Chasing Time | A Cinematic Visual Story', 'Cinematography • Narrative', 'Satish CineVision', 'https://youtu.be/yL2uEhEPj1A?si=LBBrY6L84OT-9Byq', 'Chasing Time | A Cinematic Visual Story | Short Film')">
                     <div class="project-img-box">
-                        <img src="https://img.youtube.com/vi/yL2uEhEPj1A/hqdefault.jpg" alt="Chasing Time Thumbnail">
+                        <img src="https://img.youtube.com/vi/yL2uEhEPj1A/hqdefault.jpg" alt="Chasing Time Thumbnail" loading="lazy">
                         <span class="project-cat-pill">▶ Video • Cine</span>
                     </div>
                     <div class="project-body">
@@ -2001,17 +2033,15 @@
                 <div class="project-card" data-craft="cinematography" data-sub="music-video"
                     onclick="openDetail('Cyber Neon Music Video', 'Cinematography &bull; Music Video', 'DoP & Lighting Cameraman', 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80', 'Stylized performance shoot using RGB tube lighting, fast focal tracking, and 2.39:1 anamorphic framing for music artist visualizer.')">
                     <div class="project-img-box">
-                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80"
-                            alt="Music Video Shoot">
+                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80" alt="Music Video Shoot" loading="lazy">
                         <span class="project-cat-pill">Music Video &bull; Stylized</span>
                     </div>
                     <div class="project-body">
-                        <div
-                            style="font-family:var(--font-mono); font-size:0.65rem; color:var(--amber-cine); margin-bottom:2px;">
-                            CINEMATOGRAPHY &bull; MUSIC VIDEO</div>
+                        <div style="font-family:var(--font-mono); font-size:0.65rem; color:var(--amber-cine); margin-bottom:2px;">
+                            CINEMATOGRAPHY &bull; MUSIC VIDEO
+                        </div>
                         <h3 class="project-title">Cyber Neon Performance</h3>
-                        <p class="project-desc">RGB color saturation, energetic gimbal push-ins, and anamorphic lens
-                            flares.</p>
+                        <p class="project-desc">RGB color saturation, energetic gimbal push-ins, and anamorphic lens flares.</p>
                     </div>
                 </div>
 
@@ -2019,17 +2049,15 @@
                 <div class="project-card" data-craft="cinematography" data-sub="commercial"
                     onclick="openDetail('Artisan Coffee Commercial Ad', 'Cinematography &bull; Commercial Ad', 'Cinematographer', 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80', 'High production value brand commercial featuring macro pour shots, slow-motion 60 FPS steam diffusion, and soft 2:1 commercial lighting.')">
                     <div class="project-img-box">
-                        <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80"
-                            alt="Brand Commercial">
+                        <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80" alt="Brand Commercial" loading="lazy">
                         <span class="project-cat-pill">Commercial &bull; Brand Ad</span>
                     </div>
                     <div class="project-body">
-                        <div
-                            style="font-family:var(--font-mono); font-size:0.65rem; color:var(--amber-cine); margin-bottom:2px;">
-                            CINEMATOGRAPHY &bull; BRAND AD</div>
+                        <div style="font-family:var(--font-mono); font-size:0.65rem; color:var(--amber-cine); margin-bottom:2px;">
+                            CINEMATOGRAPHY &bull; BRAND AD
+                        </div>
                         <h3 class="project-title">Artisan Brand Commercial</h3>
-                        <p class="project-desc">Macro focus pulls, slow-motion steam capture, and soft window light
-                            simulation.</p>
+                        <p class="project-desc">Macro focus pulls, slow-motion steam capture, and soft window light simulation.</p>
                     </div>
                 </div>
 
@@ -2037,106 +2065,37 @@
                 <div class="project-card" data-craft="cinematography" data-sub="documentary"
                     onclick="openDetail('Old Delhi Craftsmen Documentary', 'Cinematography &bull; Documentary', 'Documentary Cameraman', 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80', 'Naturalistic fly-on-the-wall observational filming capturing traditional silver and book craftsmen at work in historic quarters.')">
                     <div class="project-img-box">
-                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80"
-                            alt="Documentary Shoot">
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80" alt="Documentary Shoot" loading="lazy">
                         <span class="project-cat-pill">Documentary &bull; Interview</span>
                     </div>
                     <div class="project-body">
-                        <div
-                            style="font-family:var(--font-mono); font-size:0.65rem; color:var(--amber-cine); margin-bottom:2px;">
-                            CINEMATOGRAPHY &bull; DOCUMENTARY</div>
+                        <div style="font-family:var(--font-mono); font-size:0.65rem; color:var(--amber-cine); margin-bottom:2px;">
+                            CINEMATOGRAPHY &bull; DOCUMENTARY
+                        </div>
                         <h3 class="project-title">Old Delhi Heritage Craftsmen</h3>
-                        <p class="project-desc">Handheld observational single-takes balancing available sunlight with
-                            portable fill.</p>
+                        <p class="project-desc">Handheld observational single-takes balancing available sunlight with portable fill.</p>
                     </div>
                 </div>
 
-                <!-- PHOTOGRAPHY 1: Portrait & Editorial -->
-                <div class="project-card" data-craft="photography" data-sub="portrait"
-                    onclick="openDetail('Golden Hour Fashion Editorial', 'Photography &bull; Portrait & Editorial', 'Portrait Photographer', 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80', 'Outdoor golden hour editorial portraits balancing natural sun edge backlight with subtle circular reflector bounce for deep catchlights.')">
-                    <div class="project-img-box">
-                        <img src="https://drive.google.com/drive/folders/1RoFjE1ImA2ZRj0pnuiCth9gVZvjPfxcS?usp=sharing"
-                            alt="Portrait Photography">
-                        <span class="project-cat-pill">Portrait &bull; Editorial</span>
-                    </div>
-                    <div class="project-body">
-                        <div
-                            style="font-family:var(--font-mono); font-size:0.65rem; color:var(--cyan-cine); margin-bottom:2px;">
-                            PHOTOGRAPHY &bull; PORTRAIT</div>
-                        <h3 class="project-title">Golden Hour Editorial</h3>
-                        <p class="project-desc">85mm f/1.4 prime lens with creamy subject bokeh and glowing rim
-                            highlights.</p>
-                    </div>
-                </div>
-
-                <!-- PHOTOGRAPHY 2: Street & Cultural Candid -->
-                <div class="project-card" data-craft="photography" data-sub="street"
-                    onclick="openDetail('Chawri Bazar Monochrome Study', 'Photography &bull; Street & Candid', 'Street Photographer', 'https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?auto=format&fit=crop&w=1200&q=80', 'High contrast monochrome street portraits capturing shafts of morning sunlight through Old Delhi market alleys.')">
-                    <div class="project-img-box">
-                        <img src="https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?auto=format&fit=crop&w=800&q=80"
-                            alt="Street Photography">
-                        <span class="project-cat-pill">Street &bull; Candid B&amp;W</span>
-                    </div>
-                    <div class="project-body">
-                        <div
-                            style="font-family:var(--font-mono); font-size:0.65rem; color:var(--cyan-cine); margin-bottom:2px;">
-                            PHOTOGRAPHY &bull; STREET</div>
-                        <h3 class="project-title">Chawri Bazar Monochrome</h3>
-                        <p class="project-desc">Hard daylight shafts, deep textural shadows, and unposed human
-                            expressions.</p>
-                    </div>
-                </div>
-
-                <!-- PHOTOGRAPHY 3: Architecture & Heritage -->
-                <div class="project-card" data-craft="photography" data-sub="architecture"
-                    onclick="openDetail('Safdarjung Tomb Blue Hour', 'Photography &bull; Architecture & Heritage', 'Architectural Photographer', 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=80', 'Symmetrical visual framing of Mughal stonework during twilight blue hour, preserving highlight detail in dome carvings.')">
-                    <div class="project-img-box">
-                        <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=800&q=80"
-                            alt="Architecture Photography">
-                        <span class="project-cat-pill">Architecture &bull; Heritage</span>
-                    </div>
-                    <div class="project-body">
-                        <div
-                            style="font-family:var(--font-mono); font-size:0.65rem; color:var(--cyan-cine); margin-bottom:2px;">
-                            PHOTOGRAPHY &bull; ARCHITECTURE</div>
-                        <h3 class="project-title">Safdarjung Tomb Blue Hour</h3>
-                        <p class="project-desc">16mm ultra-wide perspective with pinpoint line convergence and dynamic
-                            range.</p>
-                    </div>
-                </div>
-
-                <!-- PHOTOGRAPHY 4: Product & Macro Stills -->
-                <div class="project-card" data-craft="photography" data-sub="product"
-                    onclick="openDetail('Studio Product Still Life', 'Photography &bull; Product & Macro', 'Still Photographer', 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=80', 'Controlled studio tabletop photography showcasing glass reflections, brushed metal textures, and graduated softbox lighting.')">
-                    <div class="project-img-box">
-                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80"
-                            alt="Product Photography">
-                        <span class="project-cat-pill">Product &bull; Tabletop</span>
-                    </div>
-                    <div class="project-body">
-                        <div
-                            style="font-family:var(--font-mono); font-size:0.65rem; color:var(--cyan-cine); margin-bottom:2px;">
-                            PHOTOGRAPHY &bull; PRODUCT</div>
-                        <h3 class="project-title">Studio Product Still Life</h3>
-                        <p class="project-desc">Polarized lighting control, razor-sharp edge gradients, and pristine
-                            macro focus.</p>
-                    </div>
-                </div>
+                <!-- =========================================================
+                     GROUPED PERSON PHOTOGRAPHY POSTS (AUTO-RENDERED BELOW)
+                     Same person ki saari photos ek hi Post me aayengi!
+                ========================================================= -->
+                <div id="dynamicPhotographyPosts" style="display: contents;"></div>
 
                 <!-- VIDEO EDITING 1: Color Grading & Film Look -->
                 <div class="project-card" data-craft="editing" data-sub="color-grading"
                     onclick="openDetail('S-Log3 to Film Emulation Grade', 'Video Editing &bull; Color Grading', 'Colorist', 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1200&q=80', 'Transforming flat, low-contrast S-Log3 raw camera footage into rich cinematic Rec.709 with custom split-toning and skin tone protection.')">
                     <div class="project-img-box">
-                        <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=800&q=80"
-                            alt="Color Grading">
+                        <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=800&q=80" alt="Color Grading" loading="lazy">
                         <span class="project-cat-pill">Color Grading &bull; Rec.709</span>
                     </div>
                     <div class="project-body">
                         <div style="font-family:var(--font-mono); font-size:0.65rem; color:#10b981; margin-bottom:2px;">
-                            VIDEO EDITING &bull; COLOR GRADE</div>
+                            VIDEO EDITING &bull; COLOR GRADE
+                        </div>
                         <h3 class="project-title">S-Log3 Film Emulation</h3>
-                        <p class="project-desc">Primary exposure balancing, DaVinci Resolve color transforms, and grain
-                            emulation.</p>
+                        <p class="project-desc">Primary exposure balancing, DaVinci Resolve color transforms, and grain emulation.</p>
                     </div>
                 </div>
 
@@ -2144,16 +2103,15 @@
                 <div class="project-card" data-craft="editing" data-sub="music-edit"
                     onclick="openDetail('High-Octane Music Video Edit', 'Video Editing &bull; Music Video Cuts', 'Lead Editor', 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80', 'Aggressive multi-cam rhythm cutting synced to drum transient stems, speed ramps, whip pans, and glitch transitions.')">
                     <div class="project-img-box">
-                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80"
-                            alt="Music Video Editing">
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80" alt="Music Video Editing" loading="lazy">
                         <span class="project-cat-pill">Music Video &bull; Beat Cuts</span>
                     </div>
                     <div class="project-body">
                         <div style="font-family:var(--font-mono); font-size:0.65rem; color:#10b981; margin-bottom:2px;">
-                            VIDEO EDITING &bull; MUSIC VIDEO</div>
+                            VIDEO EDITING &bull; MUSIC VIDEO
+                        </div>
                         <h3 class="project-title">High-Octane Beat Sync Cut</h3>
-                        <p class="project-desc">Dynamic speed-ramping, rhythmic cut timing, and synchronized visual
-                            impacts.</p>
+                        <p class="project-desc">Dynamic speed-ramping, rhythmic cut timing, and synchronized visual impacts.</p>
                     </div>
                 </div>
 
@@ -2161,16 +2119,15 @@
                 <div class="project-card" data-craft="editing" data-sub="commercial-edit"
                     onclick="openDetail('30s Commercial Teaser &amp; Reels', 'Video Editing &bull; Commercial Ads', 'Commercial Editor', 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80', 'Fast-paced, hook-driven 30-second brand spot optimized for Instagram Reels and YouTube Ads with punchy sound design and captions.')">
                     <div class="project-img-box">
-                        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80"
-                            alt="Commercial Edit">
+                        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80" alt="Commercial Edit" loading="lazy">
                         <span class="project-cat-pill">Commercial &bull; Social Ads</span>
                     </div>
                     <div class="project-body">
                         <div style="font-family:var(--font-mono); font-size:0.65rem; color:#10b981; margin-bottom:2px;">
-                            VIDEO EDITING &bull; COMMERCIAL</div>
+                            VIDEO EDITING &bull; COMMERCIAL
+                        </div>
                         <h3 class="project-title">30s High-Hook Brand Spot</h3>
-                        <p class="project-desc">Sound design layering (SFX), clean typography overlays, and snappy
-                            retention pacing.</p>
+                        <p class="project-desc">Sound design layering (SFX), clean typography overlays, and snappy retention pacing.</p>
                     </div>
                 </div>
 
@@ -2178,16 +2135,15 @@
                 <div class="project-card" data-craft="editing" data-sub="narrative-edit"
                     onclick="openDetail('Dramatic Scene Dialogue Cut', 'Video Editing &bull; Narrative Pacing', 'Editor', 'https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=80', 'Subtle narrative editing focusing on emotional pauses, cut on action eye-traces, and J/L cut audio transitions between characters.')">
                     <div class="project-img-box">
-                        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80"
-                            alt="Narrative Editing">
+                        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80" alt="Narrative Editing" loading="lazy">
                         <span class="project-cat-pill">Narrative &bull; Dialogue Cut</span>
                     </div>
                     <div class="project-body">
                         <div style="font-family:var(--font-mono); font-size:0.65rem; color:#10b981; margin-bottom:2px;">
-                            VIDEO EDITING &bull; NARRATIVE</div>
+                            VIDEO EDITING &bull; NARRATIVE
+                        </div>
                         <h3 class="project-title">Dialogue Continuity Cut</h3>
-                        <p class="project-desc">Seamless cut-on-action transitions, reaction shot timing, and audio
-                            L-cuts.</p>
+                        <p class="project-desc">Seamless cut-on-action transitions, reaction shot timing, and audio L-cuts.</p>
                     </div>
                 </div>
 
@@ -2206,39 +2162,31 @@
 
             <div class="bts-grid">
                 <div class="bts-card">
-                    <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=600&q=80"
-                        alt="BTS">
+                    <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=600&q=80" alt="BTS">
                     <div class="bts-info">
                         <h4 style="font-size:0.9rem; color:#fff; font-weight:700;">Rigging Continuous COB</h4>
-                        <p style="font-size:0.75rem; color:var(--text-muted); margin-top:0.25rem;">Softbox angle
-                            placement for contrast.</p>
+                        <p style="font-size:0.75rem; color:var(--text-muted); margin-top:0.25rem;">Softbox angle placement for contrast.</p>
                     </div>
                 </div>
                 <div class="bts-card">
-                    <img src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?auto=format&fit=crop&w=600&q=80"
-                        alt="BTS">
+                    <img src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?auto=format&fit=crop&w=600&q=80" alt="BTS">
                     <div class="bts-info">
                         <h4 style="font-size:0.9rem; color:#fff; font-weight:700;">Fluid Head Tracking</h4>
-                        <p style="font-size:0.75rem; color:var(--text-muted); margin-top:0.25rem;">Operating smooth pans
-                            on tripod.</p>
+                        <p style="font-size:0.75rem; color:var(--text-muted); margin-top:0.25rem;">Operating smooth pans on tripod.</p>
                     </div>
                 </div>
                 <div class="bts-card">
-                    <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=600&q=80"
-                        alt="BTS">
+                    <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=600&q=80" alt="BTS">
                     <div class="bts-info">
                         <h4 style="font-size:0.9rem; color:#fff; font-weight:700;">Waveform Exposure</h4>
-                        <p style="font-size:0.75rem; color:var(--text-muted); margin-top:0.25rem;">False-color
-                            monitoring on field monitor.</p>
+                        <p style="font-size:0.75rem; color:var(--text-muted); margin-top:0.25rem;">False-color monitoring on field monitor.</p>
                     </div>
                 </div>
                 <div class="bts-card">
-                    <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=600&q=80"
-                        alt="BTS">
+                    <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=600&q=80" alt="BTS">
                     <div class="bts-info">
                         <h4 style="font-size:0.9rem; color:#fff; font-weight:700;">Timeline Editing</h4>
-                        <p style="font-size:0.75rem; color:var(--text-muted); margin-top:0.25rem;">Premiere Pro pacing
-                            and sound sync.</p>
+                        <p style="font-size:0.75rem; color:var(--text-muted); margin-top:0.25rem;">Premiere Pro pacing and sound sync.</p>
                     </div>
                 </div>
             </div>
@@ -2300,12 +2248,10 @@
             <div class="section-header">
                 <span class="section-tag">Direct Network</span>
                 <h2 class="section-title">Connect &amp; Follow Works</h2>
-                <p class="section-desc">Get in touch for script readings, creative collaborations, or to view raw BTS
-                    footage and film stills across all platforms.</p>
+                <p class="section-desc">Get in touch for script readings, creative collaborations, or to view raw BTS footage and film stills across all platforms.</p>
             </div>
 
             <div class="social-channels-grid">
-                <!-- Native WhatsApp URL (Zero JS needed) -->
                 <a href="https://wa.me/919354650624?text=Hi%20Satish,%20I%20saw%20your%20cinematic%20portfolio%20and%20want%20to%20discuss%20a%20shoot."
                     target="_blank" class="social-link-card">
                     <div class="social-icon-circle icon-wa">💬</div>
@@ -2327,19 +2273,19 @@
                     <div class="social-icon-circle icon-yt">▶</div>
                     <div class="social-info">
                         <h4>YouTube Channel</h4>
-                        <p>
-Satish CineVision &bull; 4K Showreels</p>
+                        <p>Satish CineVision &bull; 4K Showreels</p>
                     </div>
                 </a>
 
-<a href="https://www.linkedin.com/in/satish-cine-vision-5663923aa?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="social-link-card">                    <div class="social-icon-circle icon-li">in</div>
+                <a href="https://www.linkedin.com/in/satish-cine-vision-5663923aa?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="social-link-card">
+                    <div class="social-icon-circle icon-li">in</div>
                     <div class="social-info">
                         <h4>LinkedIn Profile</h4>
                         <p>Satish CineVision &bull; Cinematographer / DOP</p>
                     </div>
                 </a>
 
-     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=satishfreelancer80@gmail.com&su=Project+Inquiry" target="_blank" class="social-link-card">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=satishfreelancer80@gmail.com&su=Project+Inquiry" target="_blank" class="social-link-card">
                     <div class="social-icon-circle icon-mail">✉</div>
                     <div class="social-info">
                         <h4>Official Email</h4>
@@ -2362,16 +2308,14 @@ Satish CineVision &bull; 4K Showreels</p>
                 <div class="section-header" style="margin-bottom:1.5rem;">
                     <span class="section-tag">Instant WhatsApp Booking</span>
                     <h2 class="section-title">Book A Shoot Direct</h2>
-                    <p class="section-desc">Fill in the details below. Clicking the button will automatically compile
-                        your shoot brief and open WhatsApp directly.</p>
+                    <p class="section-desc">Fill in the details below. Clicking the button will automatically compile your shoot brief and open WhatsApp directly.</p>
                 </div>
 
-                <form onsubmit="sendWhatvvvsAppBrief(event)">
+                <form onsubmit="sendWhatsAppBrief(event)">
                     <div class="form-grid">
                         <div class="form-group">
                             <label class="form-label">Name / Production House *</label>
-                            <input type="text" id="clientName" required placeholder="e.g. Rahul Sharma"
-                                class="form-input">
+                            <input type="text" id="clientName" required placeholder="e.g. Rahul Sharma" class="form-input">
                         </div>
                         <div class="form-group">
                             <label class="form-label">Shoot Type *</label>
@@ -2397,24 +2341,18 @@ Satish CineVision &bull; 4K Showreels</p>
                         </div>
                         <div class="form-group">
                             <label class="form-label">Location / Approximate Date</label>
-                            <input type="text" id="shootDate" placeholder="e.g. Delhi NCR / Next Week"
-                                class="form-input">
+                            <input type="text" id="shootDate" placeholder="e.g. Delhi NCR / Next Week" class="form-input">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">Project Vision / Notes</label>
-                        <textarea id="shootNotes" rows="3"
-                            placeholder="Lighting mood, camera references, or script idea..."
-                            class="form-textarea"></textarea>
+                        <textarea id="shootNotes" rows="3" placeholder="Lighting mood, camera references, or script idea..." class="form-textarea"></textarea>
                     </div>
 
-<a href="https://wa.me/919354650624?text=Hi%20Satish,%20I%20saw%20your%20cinematic%20portfolio%20and%20want%20to%20discuss%20a%20shoot." 
-   target="_blank" 
-   rel="noopener noreferrer" 
-   class="btn-whatsapp-submit">
-    <span>💬</span> Transmit Brief to WhatsApp Directly
-</a>
+                    <button type="submit" class="btn-whatsapp-submit">
+                        <span>💬</span> Transmit Brief to WhatsApp Directly
+                    </button>
                 </form>
             </div>
         </div>
@@ -2429,42 +2367,38 @@ Satish CineVision &bull; 4K Showreels</p>
     <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container">
-            <div style="color:#fff; font-weight:700; margin-bottom:0.25rem;">Satish_CineVision &bull; Motivated Visual
-                Storytelling</div>
+            <div style="color:#fff; font-weight:700; margin-bottom:0.25rem;">Satish_CineVision &bull; Motivated Visual Storytelling</div>
             <div>&copy; 2026 Satish. All rights reserved. Open for Film &amp; Commercial Shoots.</div>
         </div>
     </footer>
 
-    <!-- MODAL: SHOWREEL (:target BASED) -->
-    <div id="showreelModal" class="modal-overlay">
+    <!-- MODAL: SHOWREEL -->
+    <div id="showreelModal" class="modal-overlay" onclick="if(event.target===this) closeShowreelModal()">
         <div class="modal-box">
-            <a href="#" class="modal-close-btn">✕</a>
+            <button type="button" onclick="closeShowreelModal()" class="modal-close-btn">✕</button>
             <div style="position:relative; aspect-ratio:16/9; background:#000; border-radius:0.5rem; overflow:hidden;">
-                <iframe style="width:100%; height:100%; border:none;"
-                    src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=1"
+                <iframe id="showreelIframe" style="width:100%; height:100%; border:none;"
+                    src=""
+                    data-src="https://www.youtube.com/embed/yL2uEhEPj1A?autoplay=1"
                     allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
         </div>
     </div>
 
     <!-- MODAL: PROJECT DETAIL -->
-    <div id="detailModal" class="modal-overlay">
+    <div id="detailModal" class="modal-overlay" onclick="if(event.target===this) closeDetail()">
         <div class="modal-box">
-            <a href="#" class="modal-close-btn" onclick="closeDetail()">✕</a>
-            
-            <!-- Dynamic Media Container (Loads Photo or YouTube iframe) -->
-            <div id="detailMediaContainer" style="aspect-ratio:16/9; border-radius:0.5rem; overflow:hidden; margin-bottom:1rem; background:#000;">
-            </div>
-            
+            <button type="button" onclick="closeDetail()" class="modal-close-btn">✕</button>
+            <div id="detailMediaContainer" style="aspect-ratio:16/9; border-radius:0.5rem; overflow:hidden; margin-bottom:1rem; background:#000;"></div>
             <span id="detailCat" style="font-family:var(--font-mono); font-size:0.7rem; color:var(--amber-cine); text-transform:uppercase; font-weight:700;"></span>
             <h3 id="detailTitle" style="font-size:1.3rem; color:#fff; font-weight:800; margin:0.3rem 0;"></h3>
             <p id="detailDesc" style="font-size:0.85rem; color:var(--text-muted); line-height:1.6;"></p>
         </div>
     </div>
 
-    <!-- JAVASCRIPT: ENHANCED INTERACTIVITY -->
+    <!-- JAVASCRIPT: COMPLETE LOGIC -->
     <script>
-        const MY_WHATSAPP = "919876543210";
+        const MY_WHATSAPP = "919354650624";
 
         // ==========================================
         // 1. LIGHTING LAB GAFFER CONSOLE & PATTERNS
@@ -2498,7 +2432,6 @@ Satish CineVision &bull; 4K Showreels</p>
             const badge = document.getElementById('patternNameBadge');
             const insight = document.getElementById('lightingInsightText');
 
-            // Update Pattern Buttons State
             ['Rembrandt', 'Split', 'Butterfly', 'Rim'].forEach(name => {
                 const b = document.getElementById('btnPat' + name);
                 if (b) b.classList.remove('active');
@@ -2575,7 +2508,6 @@ Satish CineVision &bull; 4K Showreels</p>
             if (labelKey) labelKey.textContent = keyVal + '%';
             if (hudKeyPower) hudKeyPower.textContent = keyVal + '%';
 
-            // Calculate Kelvin Tint (3200K warm orange -> 5600K daylight cyan/white)
             const factor = (cctVal - 3200) / (5600 - 3200);
             const r = Math.round(251 - factor * (251 - 220));
             const g = Math.round(191 + factor * (240 - 191));
@@ -2594,7 +2526,6 @@ Satish CineVision &bull; 4K Showreels</p>
                 hudCCT.style.color = cctVal <= 3600 ? 'var(--amber-warm)' : (cctVal >= 5000 ? 'var(--cyan-cine)' : '#ffffff');
             }
 
-            // Real-time Subject Shadow Shading
             if (silhouette) {
                 if (!lightState.key && !lightState.fill && !lightState.rim) {
                     silhouette.style.filter = 'brightness(0.15) contrast(1.5)';
@@ -2632,15 +2563,10 @@ Satish CineVision &bull; 4K Showreels</p>
         }
 
         function setLightingPreset(preset) {
-            if (preset === 'noir') {
-                setFacePattern('split');
-            } else if (preset === 'golden') {
-                setFacePattern('rembrandt');
-            } else if (preset === 'commercial') {
-                setFacePattern('butterfly');
-            } else {
-                setFacePattern('rembrandt');
-            }
+            if (preset === 'noir') setFacePattern('split');
+            else if (preset === 'golden') setFacePattern('rembrandt');
+            else if (preset === 'commercial') setFacePattern('butterfly');
+            else setFacePattern('rembrandt');
         }
 
         // ==========================================
@@ -2679,7 +2605,7 @@ Satish CineVision &bull; 4K Showreels</p>
                 updateSlider(pct);
             });
         }
-        
+
         // ===================================================
         // 3. TWO-TIER PORTFOLIO FILTER (CRAFT + SUB-TYPES)
         // ===================================================
@@ -2689,24 +2615,20 @@ Satish CineVision &bull; 4K Showreels</p>
             ],
             cinematography: [
                 { id: "all", label: "All Cinematography (4)" },
-                { id: "narrative", label: "🎬 Narrative & Short Films" },
-                { id: "music-video", label: "🎵 Music Videos & Stylized" },
-                { id: "commercial", label: "📺 Brand Commercials & Ads" },
+                { id: "narrative", label: "🎬 Short Films" },
                 { id: "documentary", label: "🎙️ Documentary & Interviews" }
             ],
             photography: [
-                { id: "all", label: "All Photography (4)" },
-                { id: "portrait", label: "👤 Portrait & Editorial" },
-                { id: "street", label: "🏙️ Street & Candid B&W" },
-                { id: "architecture", label: "🏛️ Architecture & Heritage" },
-                { id: "product", label: "⌚ Product & Tabletop" }
+                { id: "all", label: "All Photography " },
+                { id: "portrait", label: "👤 Portrait Series (Folder 01, 02, 03)" },
+                { id: "nature", label: "🌿 Nature Series" },
+                { id: "event", label: "🎤 Event & Concert" }
             ],
             editing: [
                 { id: "all", label: "All Video Editing (4)" },
                 { id: "color-grading", label: "🎨 S-Log3 Color Grading" },
-                { id: "music-edit", label: "⚡ Music Video Beat Cuts" },
-                { id: "commercial-edit", label: "📱 Commercial Ads & Reels" },
-                { id: "narrative-edit", label: "🎞️ Narrative Dialogue Cuts" }
+                { id: "music-edit", label: "⚡  Reels" },
+                { id: "commercial-edit", label: "📱 Commercial Ads" },
             ]
         };
 
@@ -2717,16 +2639,10 @@ Satish CineVision &bull; 4K Showreels</p>
             activeCraft = craft;
             activeSubtype = "all";
 
-            // Update main tab active button
             document.querySelectorAll('.main-craft-btn').forEach(btn => {
-                if (btn.getAttribute('data-craft') === craft) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
+                btn.classList.toggle('active', btn.getAttribute('data-craft') === craft);
             });
 
-            // Re-render Tier 2 Sub-Chips
             const subRow = document.getElementById('subCategoryRow');
             const chips = subTypesData[craft] || subTypesData.all;
 
@@ -2741,15 +2657,9 @@ Satish CineVision &bull; 4K Showreels</p>
 
         function filterBySubtype(sub) {
             activeSubtype = sub;
-
             document.querySelectorAll('.subtype-btn').forEach(btn => {
-                if (btn.getAttribute('data-sub') === sub) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
+                btn.classList.toggle('active', btn.getAttribute('data-sub') === sub);
             });
-
             applyPortfolioFilter();
         }
 
@@ -2758,29 +2668,382 @@ Satish CineVision &bull; 4K Showreels</p>
             cards.forEach(card => {
                 const cardCraft = card.getAttribute('data-craft');
                 const cardSub = card.getAttribute('data-sub');
-
                 const matchCraft = (activeCraft === 'all' || cardCraft === activeCraft);
                 const matchSub = (activeSubtype === 'all' || cardSub === activeSubtype);
-
-                if (matchCraft && matchSub) {
+                card.style.display = (matchCraft && matchSub) ? 'flex' : 'none';
+                if (!card.classList.contains('photo-post-card') && matchCraft && matchSub) {
                     card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
                 }
             });
         }
 
-        // ==========================================
-        // 4. PROJECT DETAIL MODAL (SUPPORTS VIDEO & PHOTO)
-        // ==========================================
+        // =========================================================
+        // 4. GROUPED PERSON POSTS (SAME PERSON = 1 POST!)
+        // Apke Drive ke Folders (01, 02, 03, Nature, Event) ke hisaab
+        // se har person/series ki saari photos ek hi Post me hain!
+        // Nayi post ya photo add karne ke liye bas Google Drive link
+        // paste karein — code khud ID nikal kar photo dikha dega!
+        // =========================================================
+        const myPhotographyPosts = [
+            {
+                personName: "Portrait Series • 01",
+                handle: "@satish_cinevision",
+                category: "portrait",
+                badge: "Portrait • 01 (4 Photos)",
+                location: "New Delhi • Golden Hour",
+                exif: "85mm • f/1.8 • Rim & Key",
+                title: "Subject 01 — Golden Hour Editorial",
+                caption: "Ek hi subject ke 4 alag-alag angles aur expressions — warm rim light aur natural fill bounce ke saath.",
+                photos: [
+                    "https://drive.google.com/file/d/1UvESdPJ4P8ISF9wK8-_9x-cmSJe0B3LF/view?usp=sharing",
+                    "https://drive.google.com/file/d/1x1OEgadR6QS5jNg52dQHbLz3ZTVIxunC/view?usp=sharing",
+                    "https://drive.google.com/file/d/1emR4cZicFDV5War_3BJvjop5ES6kRmTl/view?usp=sharing",
+                    "https://drive.google.com/file/d/1P9-d4dO31iDF5L9NSsclsdZntYqyG-0K/view?usp=sharing",
+                    "https://drive.google.com/file/d/1cGG_hg4wl3TUbSRLgXB5D6gFvk5ig1aQ/view?usp=sharing"
+                ]
+            },
+            {
+                personName: "Portrait Series • 02",
+                handle: "@satish_cinevision",
+                category: "portrait",
+                badge: "Portrait • 02 (6 Photos)",
+                location: "India Habitat Centre • Delhi",
+                exif: "50mm & 85mm • f/1.4 • Bokeh",
+                title: "Subject 02 — Outdoor Prime Series",
+                caption: "Subject 02 ke saare 6 frames ek hi post me — shallow depth of field aur creamy background separation.",
+                photos: [
+                    "https://drive.google.com/file/d/1sr-Hxx5NWpWi6wsAGsP2jct46vdd5nmN/view?usp=sharing",
+                    "https://drive.google.com/file/d/1VE7QV2SJN5h1-s6G5kpDVRvaMpLJ59SH/view?usp=sharing",
+                    "https://drive.google.com/file/d/13hqALOtH1V7wIjyA0-BMtKGdT_8fkM9t/view?usp=sharing",
+                    "https://drive.google.com/file/d/1lbp5ukUcixDNl-dYrGOjWWrq2EcLMiZf/view?usp=sharing",
+                    "https://drive.google.com/file/d/1BNFYqFk23j0NkR_Puu_1da_r59PNKuZb/view?usp=sharing",
+                    "https://drive.google.com/file/d/19ZrxFJJaoFADqLm5Iy4yY_mvAKARIcel/view?usp=sharing"
+                ]
+            },
+            {
+                personName: "Portrait Series • 03",
+                handle: "@satish_cinevision",
+                category: "portrait",
+                badge: "Portrait • 03 (9 Photos)",
+                location: "Delhi NCR • Sony Alpha",
+                exif: "Sony Alpha • RAW Color Grade",
+                title: "Subject 03 — Complete Studio & Outdoor Set",
+                caption: "Subject 03 ki poori 9-photo editorial series ek hi swipeable carousel post me.",
+                photos: [
+                    "https://drive.google.com/file/d/1u71Gny4WaaiZnUsfN_wL7quzvOxuDuUB/view?usp=sharing",
+                    "https://drive.google.com/file/d/1Fyp13s32rEY4EE_W729b2QyH0gO6NgnK/view?usp=sharing",
+                    "https://drive.google.com/file/d/1XbfyMyes8zevKjZYSBLpvkueXOx_nWRb/view?usp=sharing",
+                    "https://drive.google.com/file/d/1VVPq6XaHydg0K51rcdeA8BoKjhFBrkRu/view?usp=sharing",
+                    "https://drive.google.com/file/d/12xnoaBQ5E0g4dCMMXi1elJDFCvkMhpct/view?usp=sharing",
+                    "https://drive.google.com/file/d/1BRJK7zG6VIJyilgsb30v1tlWQQ13wnsC/view?usp=sharing",
+                    "https://drive.google.com/file/d/1E9_K_4ys9GjEift2yKc4uHoNvsduaHW4/view?usp=sharing",
+                    "https://drive.google.com/file/d/1J1NJBiObqDtSrm96IuK17vyPkFj70kA8/view?usp=sharing",
+                    "https://drive.google.com/file/d/1wnO8u9g0BTUvcAECR0Dsuw4Vqg_MD05-/view?usp=sharing"
+                ]
+            },
+            {
+                personName: "Nature Photography Series",
+                handle: "@satish_cinevision",
+                category: "nature",
+                badge: "Nature • 3 Photos",
+                location: "Delhi Green Belt • Natural Light",
+                exif: "Wide Frame • RAW Color Grade",
+                title: "Nature & Atmospheric Frames",
+                caption: "Organic color palette aur natural sunlight ke saath outdoor nature photography frames.",
+                photos: [
+                    "https://drive.google.com/file/d/1NEKlHLVFg7r82_ILCXuSadlzQzv-bS4-/view?usp=sharing",
+                    "https://drive.google.com/file/d/1xIA4fqBN2gjYk_6YTKpBgON5I-KuuCAc/view?usp=sharing",
+                    
+                ]
+            },
+            {
+                personName: "Event & Concert Coverage",
+                handle: "@satish_cinevision",
+                category: "event",
+                badge: "Event • IHC Delhi",
+                location: "Stein Auditorium, IHC New Delhi",
+                exif: "70-200mm • Stage Lighting",
+                title: "Live Concert & Auditorium Coverage",
+                caption: "India Habitat Centre (Stein Auditorium) live stage lighting aur candid performance frames.",
+                photos: [
+                   "https://drive.google.com/file/d/13kxYQtcuxlAg8wiTK_LdAVzIAaQMFMxU/view?usp=drive_link/view?usp=sharing",
+                "https://drive.google.com/file/d/1lDeh27Y5mcik2vh6AjUSTn-qE9INK4OF/view?usp=sharing",
+                    "https://drive.google.com/file/d/1UBZxKTD7GB6UDgbTufv0x3lWGl8QKZUa/view?usp=sharing",
+                    "https://drive.google.com/file/d/1vVkDO288XZNCsb1_rJ2-LJLuWehb_Yls/view?usp=sharing",
+                    "https://drive.google.com/file/d/1lDeh27Y5mcik2vh6AjUSTn-qE9INK4OF/view?usp=sharing",
+                ]
+            }
+            
+        ];
+
+        const postSlideState = {};
+
+        // =========================================================
+        // SMART GOOGLE DRIVE LINK EXTRACTOR
+        // Aap poora Google Drive link paste karein ya sirf ID,
+        // yeh function automatic ID nikal kar direct photo dikhayega!
+        // =========================================================
+        function extractDriveId(input) {
+            if (!input) return "";
+            const str = input.trim();
+            const dMatch = str.match(/\/d\/([a-zA-Z0-9_-]{15,})/);
+            if (dMatch && dMatch[1]) return dMatch[1];
+            const idMatch = str.match(/[?&]id=([a-zA-Z0-9_-]{15,})/);
+            if (idMatch && idMatch[1]) return idMatch[1];
+            return str;
+        }
+
+        function getDriveImgUrl(linkOrId) {
+            const str = (linkOrId || "").trim();
+            if (str.startsWith("http") && !str.includes("drive.google.com") && !str.includes("googleusercontent.com")) {
+                return str;
+            }
+            const id = extractDriveId(str);
+            return `https://lh3.googleusercontent.com/d/${id}=w1200`;
+        }
+
+        function getDriveFallbackUrl(linkOrId) {
+            const str = (linkOrId || "").trim();
+            if (str.startsWith("http") && !str.includes("drive.google.com") && !str.includes("googleusercontent.com")) {
+                return str;
+            }
+            const id = extractDriveId(str);
+            return `https://drive.google.com/thumbnail?id=${id}&sz=w1200`;
+        }
+
+        function changePostSlide(event, postIdx, direction) {
+            if (event) event.stopPropagation();
+            const post = myPhotographyPosts[postIdx];
+            if (!post) return;
+            const total = post.photos.length;
+            const current = postSlideState[postIdx] || 0;
+            const next = (current + direction + total) % total;
+            goToPostSlide(null, postIdx, next);
+        }
+
+        function goToPostSlide(event, postIdx, slideIdx) {
+            if (event) event.stopPropagation();
+            const post = myPhotographyPosts[postIdx];
+            if (!post) return;
+            postSlideState[postIdx] = slideIdx;
+
+            const card = document.getElementById(`photo-post-${postIdx}`);
+            if (!card) return;
+
+            card.querySelectorAll('.carousel-slide').forEach((img, idx) => {
+                img.classList.toggle('active', idx === slideIdx);
+            });
+            card.querySelectorAll('.carousel-dot').forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === slideIdx);
+            });
+            const counter = card.querySelector('.carousel-counter-pill');
+            if (counter) {
+                counter.textContent = `${slideIdx + 1} / ${post.photos.length}`;
+            }
+        }
+
+        function renderPhotographyPosts() {
+            const container = document.getElementById('dynamicPhotographyPosts');
+            if (!container) return;
+
+            container.innerHTML = myPhotographyPosts.map((post, postIdx) => {
+                const totalSlides = post.photos.length;
+                const slidesHtml = post.photos.map((link, sIdx) => `
+                    <img class="carousel-slide ${sIdx === 0 ? 'active' : ''}"
+                         src="${getDriveImgUrl(link)}"
+                         onerror="this.onerror=null;this.src='${getDriveFallbackUrl(link)}';"
+                         alt="${post.title} (${sIdx + 1})"
+                         loading="lazy">
+                `).join('');
+
+                const controlsHtml = totalSlides > 1 ? `
+                    <span class="carousel-counter-pill">1 / ${totalSlides}</span>
+                    <button type="button" class="carousel-nav-btn carousel-prev" onclick="changePostSlide(event, ${postIdx}, -1)" aria-label="Previous photo">&#10094;</button>
+                    <button type="button" class="carousel-nav-btn carousel-next" onclick="changePostSlide(event, ${postIdx}, 1)" aria-label="Next photo">&#10095;</button>
+                    <div class="carousel-dots">
+                        ${post.photos.map((_, dIdx) => `
+                            <span class="carousel-dot ${dIdx === 0 ? 'active' : ''}" onclick="goToPostSlide(event, ${postIdx}, ${dIdx})"></span>
+                        `).join('')}
+                    </div>
+                ` : '';
+
+                return `
+                <article id="photo-post-${postIdx}" class="project-card photo-post-card" data-craft="photography" data-sub="${post.category}"
+                    onclick="openPhotoPostModal(${postIdx})">
+                    
+                    <div class="post-header">
+                        <div class="post-author">
+                            <div class="post-avatar">SV</div>
+                            <div class="post-author-info">
+                                <span class="post-handle">${post.personName}</span>
+                                <span class="post-location">${post.location}</span>
+                            </div>
+                        </div>
+                        <span class="post-badge-pill">${post.badge}</span>
+                    </div>
+
+                    <div class="post-media-box" data-post-idx="${postIdx}">
+                        ${slidesHtml}
+                        ${controlsHtml}
+                    </div>
+
+                    <div class="post-body">
+                        <div class="post-exif-strip">
+                            <span class="exif-tag">📷 ${post.exif}</span>
+                            <span class="exif-tag" style="color:var(--cyan-cine); border-color:rgba(6,182,212,0.3); background:rgba(6,182,212,0.08);">
+                                🖼️ ${totalSlides} Photos in 1 Post
+                            </span>
+                        </div>
+                        <h3 class="post-caption-title">${post.title}</h3>
+                        <p class="post-caption-desc">${post.caption}</p>
+                        <div class="post-footer-bar">
+                            <span>POST #${String(postIdx + 1).padStart(2, '0')} &bull; SWIPE / ARROWS</span>
+                            <span style="color:var(--cyan-cine);">Open Full Series &rarr;</span>
+                        </div>
+                    </div>
+                </article>
+                `;
+            }).join('');
+
+            // Enable touch swipe on each carousel post card
+            document.querySelectorAll('.post-media-box').forEach(box => {
+                let startX = 0;
+                box.addEventListener('touchstart', e => {
+                    startX = e.touches[0].clientX;
+                }, { passive: true });
+                box.addEventListener('touchend', e => {
+                    const diff = startX - e.changedTouches[0].clientX;
+                    const idx = parseInt(box.getAttribute('data-post-idx'), 10);
+                    if (Math.abs(diff) > 35) {
+                        changePostSlide(null, idx, diff > 0 ? 1 : -1);
+                    }
+                }, { passive: true });
+            });
+
+            // Auto-update tab counters
+            const totalPhotoPosts = myPhotographyPosts.length;
+            const totalAll = 8 + totalPhotoPosts;
+            const allBtn = document.querySelector('.main-craft-btn[data-craft="all"]');
+            const photoBtn = document.querySelector('.main-craft-btn[data-craft="photography"]');
+            if (allBtn) allBtn.textContent = `All Works (${totalAll})`;
+            if (photoBtn) photoBtn.textContent = `📷 Photography (${totalPhotoPosts} Posts)`;
+
+            const portraitCount = myPhotographyPosts.filter(p => p.category === 'portrait').length;
+            const natureCount = myPhotographyPosts.filter(p => p.category === 'nature').length;
+            const eventCount = myPhotographyPosts.filter(p => p.category === 'event').length;
+            subTypesData.photography = [
+                { id: "all", label: `All Photography (${totalPhotoPosts} Posts)` },
+                { id: "portrait", label: `👤 Portrait Series (${portraitCount})` },
+                { id: "nature", label: `🌿 Nature Series (${natureCount})` },
+                { id: "event", label: `🎤 Event & Concert (${eventCount})` }
+            ];
+        }
+
+        renderPhotographyPosts();
+
+        // =========================================================
+        // 5. ZERO-JUMP SCROLL & BACK-BUTTON NAVIGATION SYSTEM
+        // Root Cause Fix:
+        // Pehle URL hash (#detailModal / #featureMenuModal) badalne se
+        // ya history.back() se page reset hokar top (Home) pe chala
+        // jaata tha. Ab modals pure JS state se khulte hain aur
+        // browser/mobile Back button exact scroll position lock rakhta hai!
+        // =========================================================
+        let lockedScrollPosition = 0;
+        let activeModalType = null;
+
+        // Disable browser automatic scroll restoration on popstate
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+
+        function smoothJumpTo(event, sectionId) {
+            if (event) event.preventDefault();
+            const target = document.getElementById(sectionId);
+            if (target) {
+                const topOffset = target.getBoundingClientRect().top + window.scrollY - 84;
+                window.scrollTo({ top: Math.max(0, topOffset), behavior: 'smooth' });
+            }
+        }
+
+        function navigateFromMenu(sectionId) {
+            closeFeatureMenu(true);
+            setTimeout(() => {
+                smoothJumpTo(null, sectionId);
+            }, 40);
+        }
+
+        function lockBodyScroll() {
+            lockedScrollPosition = window.scrollY;
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${lockedScrollPosition}px`;
+            document.body.style.left = '0';
+            document.body.style.right = '0';
+            document.body.style.width = '100%';
+        }
+
+        function unlockBodyScroll() {
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.left = '';
+            document.body.style.right = '';
+            document.body.style.width = '';
+            window.scrollTo({ top: lockedScrollPosition, behavior: 'instant' });
+        }
+
+        function openFeatureMenu() {
+            lockBodyScroll();
+            activeModalType = 'menu';
+            document.getElementById('featureMenuModal').classList.add('active');
+            history.pushState({ satishModal: 'menu' }, '');
+        }
+
+        function closeFeatureMenu(skipHistoryBack) {
+            const menu = document.getElementById('featureMenuModal');
+            if (!menu.classList.contains('active')) return;
+            menu.classList.remove('active');
+            activeModalType = null;
+            unlockBodyScroll();
+            if (!skipHistoryBack && history.state && history.state.satishModal === 'menu') {
+                history.back();
+            }
+        }
+
+        function openShowreelModal() {
+            lockBodyScroll();
+            activeModalType = 'showreel';
+            const modal = document.getElementById('showreelModal');
+            const iframe = document.getElementById('showreelIframe');
+            if (iframe && iframe.dataset.src) {
+                iframe.src = iframe.dataset.src;
+            }
+            modal.classList.add('open');
+            history.pushState({ satishModal: 'showreel' }, '');
+        }
+
+        function closeShowreelModal(skipHistoryBack) {
+            const modal = document.getElementById('showreelModal');
+            if (!modal.classList.contains('open')) return;
+            modal.classList.remove('open');
+            const iframe = document.getElementById('showreelIframe');
+            if (iframe) iframe.src = '';
+            activeModalType = null;
+            unlockBodyScroll();
+            if (!skipHistoryBack && history.state && history.state.satishModal === 'showreel') {
+                history.back();
+            }
+        }
+
         function openDetail(title, cat, role, mediaUrl, desc) {
+            lockBodyScroll();
+            activeModalType = 'detail';
             document.getElementById('detailTitle').textContent = title;
             document.getElementById('detailCat').textContent = cat + ' • ' + role;
             document.getElementById('detailDesc').textContent = desc;
-            
+
             const mediaContainer = document.getElementById('detailMediaContainer');
-            
-            // Check if the URL is a YouTube link
+            mediaContainer.style.aspectRatio = '16/9';
+
             if (mediaUrl.includes('youtube.com') || mediaUrl.includes('youtu.be')) {
                 let videoId = '';
                 if (mediaUrl.includes('youtu.be/')) {
@@ -2788,25 +3051,127 @@ Satish CineVision &bull; 4K Showreels</p>
                 } else if (mediaUrl.includes('youtube.com/watch?v=')) {
                     videoId = mediaUrl.split('v=')[1].split('&')[0];
                 }
-                
-                // Inject an iframe for playable YouTube video
                 mediaContainer.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${videoId}?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="border:none;"></iframe>`;
             } else {
-                // Inject an image tag for photos
-                mediaContainer.innerHTML = `<img src="${mediaUrl}" style="width:100%; height:100%; object-fit:cover;" alt="Detail">`;
+                const resolvedUrl = getDriveImgUrl(mediaUrl);
+                const fallbackUrl = getDriveFallbackUrl(mediaUrl);
+                mediaContainer.innerHTML = `<img src="${resolvedUrl}" onerror="this.onerror=null;this.src='${fallbackUrl}';" style="width:100%; height:100%; object-fit:contain; background:#06070a;" alt="Detail">`;
             }
 
             document.getElementById('detailModal').classList.add('open');
+            history.pushState({ satishModal: 'detail' }, '');
         }
 
-        function closeDetail() {
-            document.getElementById('detailModal').classList.remove('open');
-            // Clear the container to instantly stop the video from playing in the background
-            document.getElementById('detailMediaContainer').innerHTML = '';
+        function openPhotoPostModal(postIdx) {
+            const post = myPhotographyPosts[postIdx];
+            if (!post) return;
+            lockBodyScroll();
+            activeModalType = 'detail';
+            const startSlide = postSlideState[postIdx] || 0;
+
+            document.getElementById('detailTitle').textContent = post.title;
+            document.getElementById('detailCat').textContent = `PHOTOGRAPHY • ${post.personName.toUpperCase()} (${post.photos.length} PHOTOS)`;
+            document.getElementById('detailDesc').textContent = post.caption;
+
+            const mediaContainer = document.getElementById('detailMediaContainer');
+            const firstUrl = getDriveImgUrl(post.photos[startSlide]);
+            const firstFallback = getDriveFallbackUrl(post.photos[startSlide]);
+
+            const thumbsHtml = post.photos.length > 1 ? `
+                <div class="modal-thumb-strip" id="modalThumbStrip">
+                    ${post.photos.map((link, idx) => `
+                        <div class="modal-thumb-item ${idx === startSlide ? 'active' : ''}" onclick="switchModalPhoto(${postIdx}, ${idx})">
+                            <img src="${getDriveImgUrl(link)}" onerror="this.onerror=null;this.src='${getDriveFallbackUrl(link)}';" alt="Frame ${idx + 1}">
+                        </div>
+                    `).join('')}
+                </div>
+            ` : '';
+
+            mediaContainer.style.aspectRatio = 'auto';
+            mediaContainer.innerHTML = `
+                <div style="position:relative; width:100%; height:440px; background:#050609; border-radius:0.5rem; overflow:hidden;">
+                    <img id="modalMainPhoto" src="${firstUrl}" onerror="this.onerror=null;this.src='${firstFallback}';" style="width:100%; height:100%; object-fit:contain;" alt="${post.title}">
+                    ${post.photos.length > 1 ? `
+                        <button type="button" class="carousel-nav-btn carousel-prev" onclick="stepModalPhoto(${postIdx}, -1)">&#10094;</button>
+                        <button type="button" class="carousel-nav-btn carousel-next" onclick="stepModalPhoto(${postIdx}, 1)">&#10095;</button>
+                        <span id="modalPhotoCounter" class="carousel-counter-pill">${startSlide + 1} / ${post.photos.length}</span>
+                    ` : ''}
+                </div>
+                ${thumbsHtml}
+            `;
+            mediaContainer.dataset.currentPost = postIdx;
+            mediaContainer.dataset.currentSlide = startSlide;
+
+            document.getElementById('detailModal').classList.add('open');
+            history.pushState({ satishModal: 'detail' }, '');
         }
+
+        function switchModalPhoto(postIdx, slideIdx) {
+            const post = myPhotographyPosts[postIdx];
+            if (!post) return;
+            const mediaContainer = document.getElementById('detailMediaContainer');
+            mediaContainer.dataset.currentSlide = slideIdx;
+
+            const mainImg = document.getElementById('modalMainPhoto');
+            if (mainImg) {
+                mainImg.onerror = function() {
+                    this.onerror = null;
+                    this.src = getDriveFallbackUrl(post.photos[slideIdx]);
+                };
+                mainImg.src = getDriveImgUrl(post.photos[slideIdx]);
+            }
+
+            const counter = document.getElementById('modalPhotoCounter');
+            if (counter) counter.textContent = `${slideIdx + 1} / ${post.photos.length}`;
+
+            document.querySelectorAll('#modalThumbStrip .modal-thumb-item').forEach((el, idx) => {
+                el.classList.toggle('active', idx === slideIdx);
+            });
+        }
+
+        function stepModalPhoto(postIdx, dir) {
+            const post = myPhotographyPosts[postIdx];
+            if (!post) return;
+            const mediaContainer = document.getElementById('detailMediaContainer');
+            const cur = parseInt(mediaContainer.dataset.currentSlide || '0', 10);
+            const next = (cur + dir + post.photos.length) % post.photos.length;
+            switchModalPhoto(postIdx, next);
+        }
+
+        function closeDetail(skipHistoryBack) {
+            const modal = document.getElementById('detailModal');
+            if (!modal.classList.contains('open')) return;
+            modal.classList.remove('open');
+            document.getElementById('detailMediaContainer').innerHTML = '';
+            activeModalType = null;
+            unlockBodyScroll();
+            if (!skipHistoryBack && history.state && history.state.satishModal === 'detail') {
+                history.back();
+            }
+        }
+
+        // Hardware / Browser Back Button Handler
+        window.addEventListener('popstate', function() {
+            if (activeModalType === 'detail') {
+                closeDetail(true);
+            } else if (activeModalType === 'menu') {
+                closeFeatureMenu(true);
+            } else if (activeModalType === 'showreel') {
+                closeShowreelModal(true);
+            }
+        });
+
+        // Escape Key Closes Active Modal Cleanly
+        window.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                if (activeModalType === 'detail') closeDetail(false);
+                else if (activeModalType === 'menu') closeFeatureMenu(false);
+                else if (activeModalType === 'showreel') closeShowreelModal(false);
+            }
+        });
 
         // ==========================================
-        // 5. DIRECT WHATSAPP BRIEF BUILDER
+        // 6. DIRECT WHATSAPP BRIEF BUILDER
         // ==========================================
         function sendWhatsAppBrief(e) {
             e.preventDefault();
@@ -2816,7 +3181,7 @@ Satish CineVision &bull; 4K Showreels</p>
             const shootDate = document.getElementById('shootDate').value || 'Flexible';
             const shootNotes = document.getElementById('shootNotes').value || 'Discussion';
 
-            const text = "*CINEMATOGRAPHY SHOOT INQUIRY (SATISH_VISION)*%0A%0A"
+            const text = "*CINEMATOGRAPHY SHOOT INQUIRY (SATISH_CineVision)*%0A%0A"
                 + "*Client/Production:* " + encodeURIComponent(name) + "%0A"
                 + "*Shoot Format:* " + encodeURIComponent(shootType) + "%0A"
                 + "*Role Needed:* " + encodeURIComponent(hireRole) + "%0A"
